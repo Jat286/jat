@@ -69,3 +69,8 @@ h1 {
   background-color: #bbb;
   color: black;
 }
+
+.appframe {
+	border: 3px solid black;
+	border-radius:1em;
+}
