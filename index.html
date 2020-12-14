@@ -32,5 +32,11 @@
             <input type="text" id="userInput" />
             <input type="submit" onclick="othername();" />
         </form>
+        <script>
+            function othername() {
+                var input = document.getElementById("userInput").value;
+                document.cookie = input;
+            }
+        </script>
     </body>
 </html>
