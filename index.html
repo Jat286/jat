@@ -29,13 +29,25 @@
     		<p>Something went wrong :(</p>
     	</iframe>
     	<form id="form" onsubmit="return false;">
-            <input type="text" id="userInput" />
+            <input type="text" id="userInput" placeholder="Set USPIN" />
             <input type="submit" onclick="othername();" />
         </form>
+        <button onclick="tem()">USPIN</button>
         <script>
             function othername() {
                 var input = document.getElementById("userInput").value;
-                document.cookie = "uspin=" + input;
+                var uspin = document.cookie = "uspin=" + input;
+            }
+            function tem() {
+                var input = document.getElementById("userInput").value;
+                var password = input;
+                var guess = "y";
+                while (guess !== password) {
+                    var guess = prompt("Enter Password");
+                    if (guess == password) {
+                        alert("ACCESS GRANTED");
+                    }
+                }
             }
         </script>
     </body>
