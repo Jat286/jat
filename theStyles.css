@@ -1,0 +1,177 @@
+/*fonts.google.com/Ubuntu*/
+@import url('https://fonts.googleapis.com/css2?family=Ubuntu&display=swap');
+/*styles*/
+*{font-family:'Ubuntu',sans-serif;}h1{font-size:30px;color:#0000b3;}h2{font-size:35px;}/* width */
+::-webkit-scrollbar {
+  width: 15px;
+}
+
+h3 {
+	color: #0000b3;
+}
+
+::selection {
+  color: #ffffff;
+  background: #222;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+  background: #c7c7ff;
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background: #0000b3;
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+  background: #00008c;
+}
+/*buttons*/
+    ::-webkit-scrollbar-button:single-button {
+      background-color: #c7c7ff;
+      display: block;
+      border-style:solid;
+      height: 10px;
+      width: 16px;
+    } 
+    /* Up */
+    ::-webkit-scrollbar-button:single-button:vertical:decrement {
+      border-width: 0 7px 7px 7px;
+      border-color: transparent transparent #0000b3 transparent;
+    }
+
+    ::-webkit-scrollbar-button:single-button:vertical:decrement:hover {
+      border-color: transparent transparent #00008c transparent;
+    }
+    /* Down */
+    ::-webkit-scrollbar-button:single-button:vertical:increment {
+      border-width: 7px 7px 0 7px;
+      border-color: #0000b3 transparent transparent transparent;
+    }
+
+    ::-webkit-scrollbar-button:vertical:single-button:increment:hover {
+      border-color: #00008c transparent transparent transparent;
+    }
+    
+div.pricecard {
+	border-radius: 10px;
+	border: 5px solid #0000b3;
+	padding: 5px;
+	margin-left: 124px;
+	width:200px;
+	height:300px;
+	text-align:center;
+	float:left;
+	box-shadow: 6px 6px 1px grey;
+}
+
+#testimonialbtn, #testimonialbtn2 {
+	padding:10px;
+	color:#ffffff;
+	background-color:#0000b3;
+	text-decoration:none;
+	border-radius:0.75em;
+	box-shadow:5px 5px 1px grey;
+	float:right;
+	margin-right:10px;
+}
+
+.dark-mode {
+  background-color: #222;
+}
+
+#toggle {
+	background-color:#0000b3;
+	color:#fff;
+	font-size:30px;
+  position: absolute;
+  left: -67.5px;
+  transition: 1s;
+	border:1px solid black;
+	width:100px;
+	height:40px; 
+	border-radius: 0 5px 5px 0;
+}
+
+.exquote {
+	color:#000;
+}
+
+#toggle:hover {
+	left:0px;
+}
+
+
+
+.id {
+	color:#0000b3;
+}
+.a {
+	color:#b3b300;
+}
+.b {
+	color:#b3b300;	
+}
+.c {
+	color:#b3b300;	
+}
+.d {
+	color:#b3b300;
+}
+.e {
+	color:#b3b300;	
+}
+.f {
+	color:#b3b300;	
+}
+.g {
+	color:#B3B300;	
+}
+
+.mailbtn {
+	  position: fixed; /* Fixed/sticky position */
+  bottom: 30px; /* Place the button at the bottom of the page */
+  right: 30px; /* Place the button 30px from the right */
+ background: url("gmail.png");
+ height: 38px;
+ width:42px;
+ border: 5px solid #0000B3;
+ padding:2px;
+ border-radius:50%;
+}
+
+/*cm*/
+
+        .context-menu { 
+            position: absolute; 
+            text-align: center; 
+            background: #444; 
+            border: 3px solid #444;
+            border-radius: 15px; 
+        } 
+  
+        .context-menu ul { 
+            padding: 0px; 
+            margin: 0px; 
+            min-width: 150px; 
+            list-style: none; 
+
+        } 
+  
+        .context-menu ul li { 
+            padding-bottom: 7px; 
+            padding-top: 7px; 
+
+        } 
+  
+        .context-menu ul li a { 
+            text-decoration: none; 
+            color:#FFFFFF;
+        } 
+  
+        .context-menu ul li:hover { 
+            background: #777; 
+        } 
