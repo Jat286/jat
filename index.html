@@ -1,54 +1,29 @@
 <!DOCTYPE html>
-<html lang="en-GB">
-    <head>
-        <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-        <link rel="stylesheet" type="text/css" href="asheetofstyles.css" />
-                <link rel="shortcut icon" href="jatlogo2.ico" type="image/x-icon" />
-        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" />  
-        <script src="cookies.js" type="text/javascript"></script>
-        <title>Jat</title>
-    </head>
-    <body>
-    	<div id="toolbar">
-
-    		<div class="dropdown">
-                <button class="dropbtn" style="font-size:30px;">&#8801;</button>
-                <div class="dropdown-content">
-                    <a href="#">Bla 1</a>
-                    <a href="#">Bla 2</a>
-                    <a href="#">Bla 3</a>
-               </div>
-            </div>
-    	    <a class="a" href="index.html">Jat!</a>
-    	</div>
-    	<br/>
-    	<hr />
-    	<h1 align="center">JatApps</h1>
-    	<br/>
-    	<iframe src="thing1.htm" height="300px" width="1160px" name="jatapps" class="appframe">
-    		<p>Something went wrong :(</p>
-    	</iframe>
-    	<form id="form" onsubmit="return false;">
-            <input type="text" id="userInput" placeholder="Set USPIN" />
-            <input type="submit" onclick="othername();" />
-        </form>
-        <button onclick="tem()">USPIN</button>
-        <script>
-            function othername() {
-                var input = document.getElementById("userInput").value;
-                var uspin = document.cookie = "uspin=" + input;
-            }
-            function tem() {
-                var input = document.getElementById("userInput").value;
-                var password = input;
-                var guess = "y";
-                while (guess !== password) {
-                    var guess = prompt("Enter Password");
-                    if (guess == password) {
-                        alert("ACCESS GRANTED");
-                    }
-                }
-            }
-        </script>
-    </body>
+<html>
+	<head>
+		<title>Jat Password</title>
+		<style>
+		    html{font-family:sans-serif;}
+		    a{text-decoration:none;color:#0000b3;font-size:25px;}
+		    input{height:25px;width:200px;}
+		    p{font-size:20px;}
+		</style>
+		<script>
+			function checkPassword() {
+			  var password = document.getElementById("passwordBox");
+			  var passwordText = password.value;
+			  if (passwordText == "thisisnotthepassword") {
+			  	return true;
+			  };
+			  alert("NO!");
+			  return false;
+			}
+		</script>
+	</head>
+	<body>
+		<h1 align="center">Jat</h1>
+		<h3 align="center">This website requires you to enter a password to view it! You must pass the TemTest to get the password.</h3>
+		<p align="center">Password: <input id="passwordBox" type="password" /></p>
+		<p align="center"><a href="https://jomunatech.co.uk/a_B€c%25de_f£gh@i-jk¬lm¦nop$q%5Ers+t%60u'vw_xy~z.html" onclick="return checkPassword();">Check Password</a></p>
+	</body>
 </html>
