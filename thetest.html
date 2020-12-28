@@ -3,7 +3,7 @@
 	<head>
 		<title>The Test Of Doom</title>
 		<style>
-		    html{font-family:sans-serif;text-align:center;}
+		    html{font-family:sans-serif;text-align:center;-webkit-user-select:none;-moz-user-select:none;-ms-user-select:none;user-select:none;}
 		</style>
 	</head>
 	<body>
@@ -15,6 +15,7 @@
 		<script>
 		  function start() {
 		    document.getElementById("q1").style.opacity = "100";
+		    document.getElementById("q5txt").value = "RANDOM";
 		  }
 	      function timerFunction() {
 			window.location.replace("https://jomunatech.co.uk");
@@ -23,7 +24,7 @@
 			var q1 = document.getElementById("q1txt").value;
 			if(q1 == "EMIBUG") {
 		      document.getElementById("q2").style.opacity = "100";				
-			}
+            } 
 		  }
 		  function q2Function() {
 			var q2 = document.getElementById("q2txt").value;
@@ -35,7 +36,7 @@
 			var q3 = document.getElementById("q3txt").value;
 			if(q3 == "H,U") {
 		      document.getElementById("q4").style.opacity = "100";				
-			}
+            } 
 		  }
 		  function q4Function() {
 			var q4 = document.getElementById("q4txt").value;
@@ -57,7 +58,12 @@
 		<p id="q2" style="opacity:0;">Question 2: What is the missing letter: _èćó/_ǽˣêbug? <input type="text" id="q2txt" placeholder="ANSWER" /><input type="submit" onclick="q2Function()" /></p>
 		<p id="q3" style="opacity:0;">Question 3: Fill in the gaps (e.g. "A,B,C"): Jo_b_gs are green <input type="text" id="q3txt" placeholder="ANSWER" /><input type="submit" onclick="q3Function()" /></p>
 	    <p id="q4" style="opacity:0;">Question 4: Tomobugs are what colour? <input type="text" id="q4txt" placeholder="ANSWER" /><input type="submit" onclick="q4Function()" /></p>
-	    <p id="q5" style="opacity:0;">Question 5: What is the most commonly used Tomobug word? <input type="text" id="q5txt" placeholder="ANSWER" /><input type="submit" onclick="q5Function()" /></p>
+	    <p id="q5" style="opacity:0;">Question 5: What is the most commonly used Tomobug word? <select id="q5txt">
+	    	<option>MÍ</option>
+	    	<option>MA</option>
+	    	<option>MOO</option>
+	    	<option>MOP</option>
+	    </select><input type="submit" onclick="q5Function()" /></p>
 	    <p id="final" style="opacity:0;">Now email the last answer to me; if you are doing the test you should know my email address!</p>
 	    <a id="final2" style="opacity:0;cursor:default;" href="https://jomunatech.co.uk">Back to JatPassword</a>
 	</body>
