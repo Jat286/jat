@@ -4,18 +4,62 @@
 		<title>This is boring...</title>
 		<style>
 		    html{font-family:sans-serif;-webkit-user-select:none;-moz-user-select:none;-ms-user-select:none;user-select:none;color:#777;}
+		    #myProgress{width:100%;background-color:#ddd;}
+		    #myBar{width:0%;height:25px;background-color:#777;color:#fff;text-align:center;line-height:25px;}
 		</style>
 		<script>
 		var avar;
+		var avar2;
+		var avar3;
           function myFunction() {
-            avar = setTimeout(theOtherFunction, 2000);
+            avar = setTimeout(theOtherFunction, 1000);
           }
           function theOtherFunction() {
-			window.location.replace("Ajnfd_jhJohUhHHuhdKpOKJdhjhdnNdjncsdjv_dfiRdkcdbmgklfvjJohknjsvn_HcnJvnnfjJJsajkfnJjfudUdnqjQJoh.html");
+          	document.getElementById("ID").innerHTML = "Redirecting to Jomunizeun A Technology..";
+          	avar2 = setTimeout(theOtherOtherFunction, 1000);
           }
+          function theOtherOtherFunction() {
+          	document.getElementById("ID").innerHTML = "Redirecting to Jomunizeun A Technology...";
+          	avar3 = setTimeout(theOtherOtherOtherFunction, 1000);          	          	
+          }
+          function theOtherOtherOtherFunction() {
+          	document.getElementById("ID").innerHTML = "Redirecting to Jomunizeun A Technology.";
+          	avar4 = setTimeout(theOtherOtherOtherOtherFunction, 1000);
+          }
+          function theOtherOtherOtherOtherFunction() {
+          	document.getElementById("ID").innerHTML = "Redirecting to Jomunizeun A Technology..";
+          	avar5 = setTimeout(theOtherOtherOtherOtherOtherFunction, 1000);          	          	
+          }
+          function theOtherOtherOtherOtherOtherFunction() {
+			window.location.replace("Ajnfd_jhJohUhHHuhdKpOKJdhjhdnNdjncsdjv_dfiRdkcdbmgklfvjJohknjsvn_HcnJvnnfjJJsajkfnJjfudUdnqjQJoh.html");          	
+          } 
 		</script>
 	</head>
-	<body onload="myFunction()">
-		<h1 align="center" style="margin-top:200px;">Redirecting...</h1>
+	<body onload="myFunction(), move()">
+				<div id="myProgress">
+            <div id="myBar">0%</div>
+        </div>
+		<h1 align="center" style="margin-top:200px;" id="ID">Reditecting to Jomunizeun A Technology.</h1>
+		<script>
+			var i = 0;
+function move() {
+  if (i == 0) {
+    i = 1;
+    var elem = document.getElementById("myBar");
+    var width = 0;
+    var id = setInterval(frame, 50);
+    function frame() {
+      if (width >= 100) {
+        clearInterval(id);
+        i = 0;
+      } else {
+        width++;
+        elem.style.width = width + "%";
+        elem.innerHTML = width  + "%";
+      }
+    }
+  }
+}
+		</script>
 	</body>
 </html>
