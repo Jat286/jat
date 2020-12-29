@@ -10,15 +10,33 @@
 		    p{font-size:20px;}
 		</style>
 		<script>
+document.onkeydown = function(e) {
+        if (e.ctrlKey && 
+            (e.keyCode === 85 )) {
+            return false;
+        } else if (e.ctrlKey &&
+        	e.shiftKey &&
+        	(e.keyCode == 73)) {
+        	return false;
+                } else if (e.keyCode == 123) {
+        	return false;
+        } else if (e.ctrlKey &&
+        	e.shiftKey &&
+        	(e.keyCode == 67)) {
+        	return false;
+                }
+};
+		    window.addEventListener('contextmenu', function (e) {
+              e.preventDefault();
+            }, false);
 			function checkPassword() {
 			  var password = document.getElementById("passwordBox");
 			  var passwordText = password.value;
 			  if (passwordText == "thisisnotthepassword") {
 			  	return true;
 			  };
-			  alert("GO AWAY");
 			  return false;
-			}
+			};
 		</script>
 	</head>
 	<body>

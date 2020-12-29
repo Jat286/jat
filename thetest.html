@@ -5,6 +5,27 @@
 		<style>
 		    html{font-family:sans-serif;text-align:center;-webkit-user-select:none;-moz-user-select:none;-ms-user-select:none;user-select:none;}
 		</style>
+		<script>
+			document.onkeydown = function(e) {
+        if (e.ctrlKey && 
+            (e.keyCode === 85 )) {
+            return false;
+        } else if (e.ctrlKey &&
+        	e.shiftKey &&
+        	(e.keyCode == 73)) {
+        	return false;
+                } else if (e.keyCode == 123) {
+        	return false;
+        } else if (e.ctrlKey &&
+        	e.shiftKey &&
+        	(e.keyCode == 67)) {
+        	return false;
+                }
+};
+		    window.addEventListener('contextmenu', function (e) {
+              e.preventDefault();
+            }, false);
+		</script>
 	</head>
 	<body>
 		<h1>The Test Of Doom</h1>
