@@ -1,17 +1,54 @@
-/* Ubuntu */
+/* starcode-version-3.0 =) embed data-starData attr {from connectedHtml} */
+
+/* Styles */
 @import url('https://fonts.googleapis.com/css2?family=Ubuntu&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Poiret+One&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Share&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Kalam&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Dr+Sugiyama&display=swap');
 /*Main Title*/
-body{font-family:'Ubuntu';}
-h3 {
-	font-family:'Ubuntu', sans-serif;
+body[data-starData='body-']{font-family:'Ubuntu', sans-serif;  justify-content:center;}
+
+h3[data-starData='h3-1'] {
+	text-align: center;
+}
+
+::selection {
+  color: #ffffff;
+  background: #222;
+}
+
+.vl {
+  border-left: 5px solid black;
+  height: 500px;
+  position: absolute;
+  left: 50%;
+  margin-left: -3px;
+  top: 270px;
+}
+
+h1[data-starData='h1-1'] {
+	text-align: center;
+	-webkit-user-select:none;-moz-user-select:none;-ms-user-select:none;user-select:none;
+}
+
+a[data-starData='a'] {
+    color:#0000b3;
+    text-align: center;
+    font-size:20px;
+    text-decoration:none;
 }
 
 #toolbar {
 	margin-right:-8px;
+	margin-left: 4.5px;
 	margin-top:-8px;
-	background-image:url('bg2.png');
+	background-image:none;
+	background-color:#ccc;
 	background-size: cover;
-	height:41px;
+	height:42px;
+	z-index:0;
+	max-width:100%;
 }
 
 .dropbtn {
@@ -25,7 +62,7 @@ h3 {
   border: none;
   margin-left:-10px;
   margin-top:-10px;
-  height:51px;
+  height:52px;
 }
 
 .dropdown {
@@ -70,7 +107,66 @@ h3 {
   color: black;
 }
 
-.appframe {
-	border: 3px solid black;
-	border-radius:1em;
+/*overlay*/
+.overlay { 
+  height: 100%;
+  width: 0;
+  position: fixed;
+  z-index: 1;
+  left: 0;
+  text-align:center;
+  top: 0;
+  background-color: rgba(0,0,0, 0.9);
+  overflow-x: hidden;
+  overflow: auto;
+  transition: 1s;
+}
+
+.overlay-content {
+  position: relative;
+  top: 2%;
+  width: 100%;
+  text-align: center;
+  margin-top: -30px;
+}
+
+.overlay a {
+	padding-left:8px;
+	padding-right:8px;
+  text-decoration: none;
+  font-size: 36px;
+  color: #818181;
+  display: block; 
+  transition: 0.5s;
+  top:0px;
+  cursor: pointer;
+}
+
+.overlay p {
+  text-decoration: none;
+  font-size: 36px;
+  color: #fff;
+  display: block; 
+}
+.overlay a:hover, .overlay a:focus {
+  color: #ffffff;
+}
+
+.overlay .closebtn {
+  margin-top:20px;
+  font-size: 30px;
+}
+
+@media screen and (max-height: 450px) {
+  .overlay a {font-size: 20px}
+  .overlay p {font-size: 20px}
+  .overlay .closebtn {
+    font-size: 40px;
+    top: 15px;
+    right: 35px;
+  }
+}
+
+#body {
+	  transition: margin-left 1s;
 }
