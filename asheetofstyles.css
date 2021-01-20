@@ -9,8 +9,17 @@
 /*Main Title*/
 body[data-starData='body-']{font-family:'Ubuntu', sans-serif;  justify-content:center;}
 
-h3[data-starData='h3-1'] {
+h2[data-starData='h2-1'] {
 	text-align: center;
+}
+
+.overlay::-webkit-scrollbar {
+  display: none;
+}
+
+.overlay {
+  -ms-overflow-style: none;  /* IE and Edge */
+  scrollbar-width: none;  /* Firefox */
 }
 
 ::selection {
@@ -91,7 +100,7 @@ a[data-starData='a'] {
 .dropdown:hover .dropdown-content {display: block;}
 
 .a {
-  margin-left:500px;
+  margin-left:0%;
   color: black;
   text-align: center;
   padding: 11px;
@@ -164,6 +173,22 @@ a[data-starData='a'] {
     font-size: 40px;
     top: 15px;
     right: 35px;
+  }
+}
+
+.canvasmargin {
+	margin-left:12%;
+}
+
+@media screen and (max-width: 600px) {
+  #resetButton {
+    display: none;
+  }
+}
+
+@media screen and (max-width: 800px) {
+  .canvas {
+  	margin-left:0;
   }
 }
 
