@@ -48,6 +48,13 @@ a[data-starData='a'] {
     text-decoration:none;
 }
 
+a[data-starData='a2'] {
+    color:#000;
+    text-align: center;
+    font-size:20px;
+    text-decoration:none;
+   }
+
 #toolbar {
 	margin-right:-8px;
 	margin-left: 4.5px;
@@ -68,7 +75,7 @@ a[data-starData='a'] {
   padding-bottom: -8px;
   padding-top: 10px;
   font-size: 16px;
-  border: none;
+  border:none;
   margin-left:-10px;
   margin-top:-10px;
   height:52px;
@@ -175,23 +182,30 @@ a[data-starData='a'] {
     right: 35px;
   }
 }
-
 .canvasmargin {
 	margin-left:12%;
 }
-
+  .asmall {
+  	display:none;
+  }
 @media screen and (max-width: 600px) {
   #resetButton {
     display: none;
   }
 }
-
-@media screen and (max-width: 800px) {
-  .canvas {
+@media screen and (max-width: 1000px) {
+  .canvasmargin {
   	margin-left:0;
   }
 }
-
+@media screen and (max-width: 600px) {
+  .a {
+  	display: none;
+  }
+  .asmall {
+  	display:block;
+  }
+}
 #body {
 	  transition: margin-left 1s;
 }
