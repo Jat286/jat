@@ -161,7 +161,7 @@ var map = {
 
     scripts: {
         change_colour: 'game.player.colour = "#"+(Math.random()*0xFFFFFF<<0).toString(16);',
-        next_level: 'game.load_map(maptwo);game.current_map.keys[10].solid = 1;game.current_map.keys[10].colour = "#813319"',
+        next_level: 'game.load_map(maptwo);game.current_map.keys[10].solid = 1;',
         death: 'game.load_map(map);game.current_map.keys[10].solid = 1;game.current_map.keys[10].colour = "#813319"',
         unlock: 'game.current_map.keys[10].solid = 0;game.current_map.keys[10].colour = "#555";',
         lock: 'game.current_map.keys[10].solid = 1;game.current_map.keys[10].colour = "#813319";'
@@ -173,27 +173,11 @@ var map = {
 var maptwo = {
 
     tile_size: 18,
-
-    /*
-    
-    Key vairables:
-    
-    id       [required] - an integer that corresponds with a tile in the data array.
-    colour   [required] - any javascript compatible colour variable.
-    solid    [optional] - whether the tile is solid or not, defaults to false.
-    bounce   [optional] - how much velocity is preserved upon hitting the tile, 0.5 is half.
-    jump     [optional] - whether the player can jump while over the tile, defaults to false.
-    friction [optional] - friction of the tile, must have X and Y values (e.g {x:0.5, y:0.5}).
-    gravity  [optional] - gravity of the tile, must have X and Y values (e.g {x:0.5, y:0.5}).
-    fore     [optional] - whether the tile is drawn in front of the player, defaults to false.
-    script   [optional] - refers to a script in the scripts section, executed if it is touched.
-    
-    */
     
     keys: [
         {id: 0, colour: '#444', solid: 0}, //bg
         {id: 1, colour: 'lightblue', solid: 0}, //air
-        {id: 2,colour: '#813319',solid: 1,bounce: 0.35}, //brick 
+        {id: 2,colour: '#EDA255',solid: 1,bounce: 0.35}, //brick 
         {id: 3,colour: '#0077BE',friction: {x: 0.9,y: 0.9},gravity: {x: 0,y: 0.1},jump: 1,fore: 1}, //water
         {id: 4,colour: '#C0C0C0',jump: 1}, //elevator
         {id: 5,colour: '#007600',solid: 1,bounce: 1.1}, //tree
@@ -201,7 +185,7 @@ var maptwo = {
         {id: 7,colour: '#807153',solid: 0}, //trunk
         {id: 8,colour: '#FADF73',solid: 0,script: 'next_level'}, //goal
         {id: 9,colour: '#C93232',solid: 0,script: 'death'}, //lava
-        {id: 10,colour: '#813319',solid: 1}, //closed vent
+        {id: 10,colour: '#EDA255',solid: 1}, //closed vent
         {id: 11,colour: 'lightblue',solid: 0,script: 'unlock'}, //unlock vent
         {id: 12,colour: '#44A6C6',solid: 0}, //decor block
         {id: 13,colour: 'lightblue',solid: 0,script: 'death'}, //void
@@ -227,17 +211,18 @@ var maptwo = {
         [2, 1, 1, 1, 12, 1, 1, 1, 12, 1, 1, 1, 2, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
         [2, 1, 1, 12, 1, 1, 1, 1, 1, 12, 1, 1, 2, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
         [2, 1, 1, 12, 12, 12, 12, 12, 12, 12, 1, 1, 2, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
-        [2, 1, 1, 12, 1, 1, 1, 1, 1, 12, 1, 1, 2, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
-        [2, 1, 1, 12, 1, 1, 1, 1, 1, 12, 1, 1, 2, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
-        [2, 1, 1, 12, 1, 1, 1, 1, 1, 12, 1, 1, 2, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
-        [2, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 2, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
-        [2, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 2, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
-        [2, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 2, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
-        [2, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 2, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
-        [2, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 2, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
-        [2, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 2, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
-        [2, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 2, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
-        [2, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 2, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+        [2, 1, 1, 12, 1, 1, 1, 1, 1, 12, 1, 1, 2, 1, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
+        [2, 1, 1, 12, 1, 1, 1, 1, 1, 12, 1, 1, 2, 1, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
+        [2, 1, 1, 12, 1, 1, 1, 1, 1, 12, 1, 1, 2, 1, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
+        [2, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 2, 1, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
+        [2, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 2, 1, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
+        [2, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
+        [2, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 13],
+        [2, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 1, 1, 1, 1, 13],
+        [2, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 1, 1, 1, 13],
+        [2, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 1, 1, 13],
+        [2, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 1, 13],
+        [2, 2, 2, 2, 2, 2, 2, 9, 9, 9, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 13]
     ],
 
     /*GRAVITY*/
@@ -265,7 +250,7 @@ var maptwo = {
     /*PLAYER DATA*/
 
     player: {
-        x: 6,
+        x: 2,
         y: 2,
         colour: '#24BDFF'
     },
@@ -274,10 +259,10 @@ var maptwo = {
 
     scripts: {
         change_colour: 'game.player.colour = "#"+(Math.random()*0xFFFFFF<<0).toString(16);',
-        next_level: 'game.load_map(maptwo);game.current_map.keys[10].solid = 1;game.current_map.keys[10].colour = "#813319"',
-        death: 'game.load_map(map);game.current_map.keys[10].solid = 1;game.current_map.keys[10].colour = "#813319"',
+        next_level: 'game.load_map(maptwo);game.current_map.keys[10].solid = 1;game.current_map.keys[10].colour = "#EDA255"',
+        death: 'game.load_map(maptwo);game.current_map.keys[10].solid = 1;game.current_map.keys[10].colour = "#EDA255"',
         unlock: 'game.current_map.keys[10].solid = 0;game.current_map.keys[10].colour = "#555";',
-        lock: 'game.current_map.keys[10].solid = 1;game.current_map.keys[10].colour = "#813319";'
+        lock: 'game.current_map.keys[10].solid = 1;game.current_map.keys[10].colour = "#EDA255";'
     }
 };
 
