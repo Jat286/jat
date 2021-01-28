@@ -92,7 +92,7 @@ var map = {
         [2, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 2, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 2, 4, 2, 10, 2],
         [2, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 2, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 2, 4, 2, 10, 2],
         [2, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 2, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 2, 4, 2, 10, 2],
-        [2, 8, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 2, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 2, 4, 2, 10, 2],
+        [2, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 2, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 2, 4, 2, 10, 2],
         [2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 1, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 4, 2, 10, 2],
         [2, 1, 1, 1, 1, 1, 1, 1, 1, 1, 2, 1, 2, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 2, 4, 2, 10, 2],
         [2, 1, 1, 1, 1, 1, 1, 1, 1, 1, 2, 1, 2, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 2, 4, 2, 10, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2],
@@ -128,7 +128,7 @@ var map = {
         [2, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 7, 1, 1, 7, 1, 1, 1, 1, 1, 1, 2, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 2],
         [2, 6, 6, 2, 2, 2, 2, 2, 2, 9, 9, 9, 9, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2]
     ],
-
+    
     /*GRAVITY*/
     
     gravity: {
@@ -163,8 +163,8 @@ var map = {
 
     scripts: {
         change_colour: 'game.player.colour = "#"+(Math.random()*0xFFFFFF<<0).toString(16);',
-        next_level: 'game.load_map(maptwo);game.current_map.keys[10].solid = 1;document.getElementById("listofgames2").style.display = "block";document.getElementById("displayLevel").innerHTML = "Level 2: Ma Pyramid"',
-        death: 'game.load_map(map);game.current_map.keys[10].solid = 1;game.current_map.keys[10].colour = "#813319"',
+        next_level: 'game.load_map(maptwo);game.current_map.keys[10].solid = 1;document.getElementById("listofgames2").style.display = "block"',
+        death: 'game.load_map(map);game.current_map.keys[10].solid = 1;game.current_map.keys[10].colour = "#813319";document.getElementById("energy").value -= 1',
         unlock: 'game.current_map.keys[10].solid = 0;game.current_map.keys[10].colour = "#555";',
         lock: 'game.current_map.keys[10].solid = 1;game.current_map.keys[10].colour = "#813319";'
     }
@@ -289,12 +289,105 @@ var maptwo = {
 
     scripts: {
         change_colour: 'game.player.colour = "#"+(Math.random()*0xFFFFFF<<0).toString(16);',
-        next_level: 'game.load_map(mapthree);game.current_map.keys[10].solid = 1;game.current_map.keys[10].colour = "#EDA255"',
-        death: 'game.load_map(maptwo);game.current_map.keys[10].solid = 1;game.current_map.keys[10].colour = "#EDA255";game.current_map.keys[7].colour = "#EDA255"',
+        next_level: 'game.load_map(mapthree);document.getElementById("listofgames3").style.display = "block";document.getElementById("displayLevel").innerHTML = "Level 3: Coral Sea"',
+        death: 'game.load_map(maptwo);game.current_map.keys[10].solid = 1;game.current_map.keys[10].colour = "#EDA255";game.current_map.keys[7].colour = "#EDA255";document.getElementById("energy").value -= 1',
         unlock: 'game.current_map.keys[10].solid = 0;game.current_map.keys[10].colour = "#555";game.current_map.keys[13].solid = 1;game.current_map.keys[13].colour = "#EDA255";game.current_map.keys[7].colour = "#555";game.current_map.keys[16].solid = 0;game.current_map.keys[16].colour = "#555"',
         lock: 'game.current_map.keys[10].solid = 1;game.current_map.keys[10].colour = "#EDA255";',
         secondlock: 'game.current_map.keys[13].solid = 0;game.current_map.keys[13].colour = "lightblue";game.current_map.keys[16].solid = 1;game.current_map.keys[16].colour = "#EDA255"',
         lavabanish: 'game.current_map.keys[9].script = " ";game.current_map.keys[9].colour = "#EDA255";game.current_map.keys[9].solid = 1'
+    }
+};
+
+/*LEVEL 3 ENGINE*/
+
+var mapthree = {
+
+    tile_size: 18,
+    
+    keys: [
+        {id: 0,colour: 'lightblue',solid: 0},//air
+        {id: 1,colour: '#0077BE',friction: {x: 0.9,y: 0.9},gravity: {x: 0,y: 0.1},jump: 1,fore: 1},//water
+        {id: 2,colour: '#E95770',solid: 1,bounce: 0.35}, //brick 
+        {id: 3,colour: '#007600',solid: 1,bounce: 1.1}, //tree
+        {id: 4,colour: 'purple',solid: 1,bounce: 0}, //landings
+        {id: 5,colour: '#FADF73',solid: 0,script: 'next_level'}, //goal
+        {id: 6,colour: '#C93232',solid: 0,script: 'death'}, //lava
+        {id: 7,colour: '#fff',solid: 1}, //closed vent
+        {id: 8,colour: 'lightblue',solid: 0,script: 'unlock'}, //unlock vent
+        {id: 9,colour: 'lightblue',solid: 0,script: 'lock'}, //lock vent
+        {id: 10,colour: '#44A6C6',solid: 0}, //decor block
+    ],
+    
+    /*DATA*/
+   
+    data: [
+        [2, 2, 2, 2, 11, 11, 11, 11, 11, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2],
+        [2, 2, 2, 2, 11, 11, 11, 11, 11, 2, 2, 2, 2, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 2],
+        [2, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 2, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 2],
+        [2, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 2, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 2],
+        [2, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 2, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 2],
+        [2, 0, 0, 10, 10, 0, 0, 0, 10, 10, 0, 0, 2, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 2],
+        [2, 0, 0, 10, 0, 10, 0, 10, 0, 10, 0, 0, 2, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 2],
+        [2, 0, 0, 10, 0, 0, 10, 0, 0, 10, 0, 0, 2, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 2],
+        [2, 0, 0, 10, 0, 0, 0, 0, 0, 10, 0, 0, 2, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 2],
+        [2, 0, 0, 10, 0, 0, 0, 0, 0, 10, 0, 0, 2, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 2],
+        [2, 0, 0, 10, 0, 0, 0, 0, 0, 10, 0, 0, 2, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 2],
+        [2, 0, 0, 10, 0, 0, 0, 0, 0, 10, 0, 0, 2, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 2],
+        [2, 0, 0, 10, 0, 0, 0, 0, 0, 10, 0, 0, 2, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 2],
+        [2, 0, 0, 0, 0, 0, 10, 0, 0, 0, 0, 0, 2, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 2],
+        [2, 0, 0, 0, 0, 10, 0, 10, 0, 0, 0, 0, 2, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 2],
+        [2, 0, 0, 0, 10, 0, 0, 0, 10, 0, 0, 0, 2, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 2],
+        [2, 0, 0, 10, 0, 0, 0, 0, 0, 10, 0, 0, 2, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 2],
+        [2, 0, 0, 10, 10, 10, 10, 10, 10, 10, 0, 0, 2, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 2],
+        [2, 0, 0, 10, 0, 0, 0, 0, 0, 10, 0, 0, 2, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 2],
+        [2, 0, 0, 10, 0, 0, 0, 0, 0, 10, 0, 0, 2, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 2],
+        [2, 0, 0, 10, 0, 0, 0, 0, 0, 10, 0, 0, 2, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 2],
+        [2, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 2, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 2],
+        [2, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 2, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 2],
+        [2, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 2, 1, 1, 1, 1, 1, 1, 1, 1, 1, 2],
+        [2, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 2, 1, 1, 2, 2, 1, 1, 1, 2, 1, 1, 1, 1, 1, 2],
+        [2, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 2, 2, 1, 1, 2, 2, 2, 1, 2, 2, 1, 1, 1, 1, 2],
+        [2, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 2, 2, 1, 1, 1, 2, 1, 2, 1, 2, 1, 1, 1, 1, 1, 2],
+        [2, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 2, 1, 1, 1, 2, 1, 1, 1, 2, 1, 1, 1, 1, 1, 2],
+        [2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2]
+    ],
+
+    /*GRAVITY*/
+    
+    gravity: {
+        x: 0,
+        y: 0.3
+    },
+    
+    /*VELOCITY LIMITS*/
+
+    vel_limit: {
+        x: 2,
+        y: 16
+    },
+
+    /*MOVEMENT SPEED*/
+    
+    movement_speed: {
+        jump: 7,
+        left: 0.5,
+        right: 0.5
+    },
+    
+    /*PLAYER DATA*/
+
+    player: {
+        x: 6,
+        y: 2,
+        colour: '#24BDFF'
+    },
+    
+    /*SCRIPTS*/
+
+    scripts: {
+        change_colour: 'game.player.colour = "#"+(Math.random()*0xFFFFFF<<0).toString(16);',
+        next_level: 'game.load_map(mapthree);game.current_map.keys[10].solid = 1;game.current_map.keys[10].colour = "#EDA255"',
+        death: 'game.load_map(maptwo)',
     }
 };
 
