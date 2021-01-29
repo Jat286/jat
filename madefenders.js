@@ -21,6 +21,15 @@ OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
 THE SOFTWARE.
 */
 
+/*CHECK ENERGY 0*/
+
+setInterval(function(){ 
+    if (document.getElementById("energy").value == 0) {
+        document.getElementById("energy").value = 5;
+	    alert("oh no");
+    };
+}, 10);
+
 /*LEVEL 1 ENGINE*/
 
 var map = {
@@ -58,7 +67,9 @@ var map = {
         {id: 11,colour: 'lightblue',solid: 0,script: 'unlock'}, //unlock vent
         {id: 12,colour: '#44A6C6',solid: 0}, //decor block
         {id: 13,colour: 'lightblue',solid: 0,script: 'death'}, //void
-        {id: 14,colour: 'lightblue',solid: 0,script: 'lock'} //lock vent
+        {id: 14,colour: 'lightblue',solid: 0,script: 'lock'}, //lock vent
+        {id: 15,colour: 'yellow',solid: 0,script: 'energybar'}, //popcake
+        {id: 16,colour: 'yellow',solid: 0,script: 'energybarthesecond'} //popcake
     ],
     
     /*DATA*/
@@ -76,7 +87,7 @@ var map = {
         [2, 1, 1, 12, 1, 1, 1, 1, 1, 12, 1, 1, 2],
         [2, 1, 1, 12, 1, 1, 1, 1, 1, 12, 1, 1, 2],
         [2, 1, 1, 12, 1, 1, 1, 1, 1, 12, 1, 1, 2, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 2, 6, 6, 6, 6, 6, 2],
-        [2, 1, 1, 12, 1, 1, 1, 1, 1, 12, 1, 1, 2, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 2, 1, 1, 1, 1, 1, 2],
+        [2, 1, 1, 12, 1, 1, 1, 1, 1, 12, 1, 1, 2, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 2, 1, 1, 15, 1, 1, 2],
         [2, 1, 1, 1, 1, 1, 12, 1, 1, 1, 1, 1, 2, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 2, 1, 1, 1, 1, 1, 2],
         [2, 1, 1, 1, 1, 12, 1, 12, 1, 1, 1, 1, 2, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 2, 1, 1, 1, 1, 1, 2],
         [2, 1, 1, 1, 12, 1, 1, 1, 12, 1, 1, 1, 2, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 2, 1, 1, 1, 1, 1, 2, 2, 2],
@@ -92,7 +103,7 @@ var map = {
         [2, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 2, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 2, 4, 2, 10, 2],
         [2, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 2, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 2, 4, 2, 10, 2],
         [2, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 2, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 2, 4, 2, 10, 2],
-        [2, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 2, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 2, 4, 2, 10, 2],
+        [2, 8, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 2, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 2, 4, 2, 10, 2],
         [2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 1, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 4, 2, 10, 2],
         [2, 1, 1, 1, 1, 1, 1, 1, 1, 1, 2, 1, 2, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 2, 4, 2, 10, 2],
         [2, 1, 1, 1, 1, 1, 1, 1, 1, 1, 2, 1, 2, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 2, 4, 2, 10, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2],
@@ -114,7 +125,7 @@ var map = {
         [2, 1, 1, 2, 2, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 2, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 2],
         [2, 1, 1, 2, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 2, 2, 2, 2, 2, 1, 1, 1, 1, 2, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 2],
         [2, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 2, 2, 2, 2, 1, 1, 1, 1, 2, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 2],
-        [2, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 2, 2, 2, 1, 1, 1, 1, 2, 5, 5, 2, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 2],
+        [2, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 16, 1, 1, 1, 1, 2, 2, 2, 1, 1, 1, 1, 2, 5, 5, 2, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 2],
         [2, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 2, 2, 1, 1, 1, 1, 2, 2, 2, 2, 2, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 2],
         [2, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 2, 1, 1, 1, 1, 2, 2, 2, 2, 2, 2, 1, 1, 1, 1, 1, 1, 1, 1, 1, 2],
         [2, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 2, 1, 1, 1, 1, 2, 2, 2, 2, 2, 2, 2, 1, 1, 1, 1, 1, 1, 1, 1, 2],
@@ -163,10 +174,12 @@ var map = {
 
     scripts: {
         change_colour: 'game.player.colour = "#"+(Math.random()*0xFFFFFF<<0).toString(16);',
-        next_level: 'game.load_map(maptwo);game.current_map.keys[10].solid = 1;document.getElementById("listofgames2").style.display = "block"',
+        next_level: 'game.load_map(maptwo);game.current_map.keys[10].solid = 1;document.getElementById("listofgames2").style.display = "block";document.getElementById("energy").value += 1;document.getElementById("displayLevel").innerHTML = "Level 2: Ma Pyramid"',
         death: 'game.load_map(map);game.current_map.keys[10].solid = 1;game.current_map.keys[10].colour = "#813319";document.getElementById("energy").value -= 1',
         unlock: 'game.current_map.keys[10].solid = 0;game.current_map.keys[10].colour = "#555";',
-        lock: 'game.current_map.keys[10].solid = 1;game.current_map.keys[10].colour = "#813319";'
+        lock: 'game.current_map.keys[10].solid = 1;game.current_map.keys[10].colour = "#813319";',
+        energybar: 'document.getElementById("energy").value += 1;game.current_map.keys[15].script = " ";game.current_map.keys[15].colour = "lightblue"',
+        energybarthesecond: 'document.getElementById("energy").value += 1;game.current_map.keys[16].script = " ";game.current_map.keys[16].colour = "lightblue"'
     }
 };
 
@@ -230,7 +243,7 @@ var maptwo = {
         [2, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 2, 10, 10, 10, 10, 10, 10, 10, 10, 10, 10, 10, 2, 1, 1, 1, 15],
         [2, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 2, 10, 10, 10, 10, 10, 10, 10, 10, 10, 10, 10, 10, 10, 2, 1, 1, 15],
         [2, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 2, 10, 10, 10, 10, 10, 10, 10, 10, 10, 10, 10, 10, 10, 10, 10, 2, 1, 15],
-        [2, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 2, 10, 10, 10, 10, 10, 10, 10, 10, 10, 10, 10, 10, 10, 10, 10, 10, 10, 2, 15],
+        [2, 8, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 2, 10, 10, 10, 10, 10, 10, 10, 10, 10, 10, 10, 10, 10, 10, 10, 10, 10, 2, 15],
         [2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 10, 10, 10, 10, 10, 10, 10, 10, 10, 10, 10, 10, 10, 10, 10, 10, 10, 2, 2],
         [2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 10, 10, 10, 10, 10, 10, 10, 2, 2, 2, 10, 10, 10, 10, 10, 10, 10, 2, 2],
         [2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 10, 10, 10, 10, 10, 10, 10, 10, 10, 10, 10, 10, 10, 10, 10, 10, 10, 2, 2],
@@ -252,11 +265,15 @@ var maptwo = {
         [2, 2, 2, 2, 2, 2, 3, 3, 3, 3, 3, 3, 3, 3, 3, 2, 2, 2, 9, 9, 9, 2, 2, 9, 9, 9, 2, 2, 2, 2, 2, 2, 2, 2, 2],
         [2, 2, 2, 2, 2, 2, 3, 3, 3, 3, 3, 3, 3, 3, 3, 2, 2, 2, 3, 3, 3, 2, 2, 3, 3, 3, 2, 2, 3, 3, 3, 2, 2, 2, 2],
         [2, 2, 2, 2, 2, 2, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 2],
-        [2, 2, 2, 2, 2, 2, 6, 2, 2, 19, 19, 19, 19, 2, 2, 2, 2, 2, 2, 18, 2, 2, 2, 2, 18, 2, 2, 2, 2, 18, 2, 2, 2, 2, 2]
+        [2, 2, 2, 2, 2, 2, 6, 2, 2, 19, 19, 19, 19, 2, 2, 2, 2, 2, 2, 18, 2, 2, 2, 2, 18, 2, 2, 2, 2, 18, 2, 2, 2, 3, 2],
+        [2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 2, 3, 2],
+        [2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 2, 3, 2],
+        [2, 2, 2, 2, 2, 2, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 2],
+        [2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 19, 19, 2, 2, 2, 2, 19, 2, 2, 2, 2, 19, 19, 2, 2, 6, 2]
     ],
 
     /*GRAVITY*/
-    
+   
     gravity: {
         x: 0,
         y: 0.3
@@ -289,7 +306,7 @@ var maptwo = {
 
     scripts: {
         change_colour: 'game.player.colour = "#"+(Math.random()*0xFFFFFF<<0).toString(16);',
-        next_level: 'game.load_map(mapthree);document.getElementById("listofgames3").style.display = "block";document.getElementById("displayLevel").innerHTML = "Level 3: Coral Sea"',
+        next_level: 'game.load_map(mapthree);document.getElementById("listofgames3").style.display = "block";document.getElementById("displayLevel").innerHTML = "Level 3: Coral Sea";document.getElementById("energy").value += 1',
         death: 'game.load_map(maptwo);game.current_map.keys[10].solid = 1;game.current_map.keys[10].colour = "#EDA255";game.current_map.keys[7].colour = "#EDA255";document.getElementById("energy").value -= 1',
         unlock: 'game.current_map.keys[10].solid = 0;game.current_map.keys[10].colour = "#555";game.current_map.keys[13].solid = 1;game.current_map.keys[13].colour = "#EDA255";game.current_map.keys[7].colour = "#555";game.current_map.keys[16].solid = 0;game.current_map.keys[16].colour = "#555"',
         lock: 'game.current_map.keys[10].solid = 1;game.current_map.keys[10].colour = "#EDA255";',
@@ -386,7 +403,7 @@ var mapthree = {
 
     scripts: {
         change_colour: 'game.player.colour = "#"+(Math.random()*0xFFFFFF<<0).toString(16);',
-        next_level: 'game.load_map(mapthree);game.current_map.keys[10].solid = 1;game.current_map.keys[10].colour = "#EDA255"',
+        next_level: 'game.load_map(mapthree);game.current_map.keys[10].solid = 1;game.current_map.keys[10].colour = "#EDA255";document.getElementById("energy").value += 1',
         death: 'game.load_map(maptwo)',
     }
 };
