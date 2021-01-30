@@ -26,7 +26,7 @@ THE SOFTWARE.
 setInterval(function(){ 
     if (document.getElementById("energy").value == 0) {
         document.getElementById("energy").value = 5;
-	    alert("oh no");
+	    alert("A PACKET OF PEPPER!!!");
     };
 }, 10);
 
@@ -68,8 +68,8 @@ var map = {
         {id: 12,colour: '#44A6C6',solid: 0}, //decor block
         {id: 13,colour: 'lightblue',solid: 0,script: 'death'}, //void
         {id: 14,colour: 'lightblue',solid: 0,script: 'lock'}, //lock vent
-        {id: 15,colour: 'yellow',solid: 0,script: 'energybar'}, //popcake
-        {id: 16,colour: 'yellow',solid: 0,script: 'energybarthesecond'} //popcake
+        {id: 15,colour: '#E7F527',solid: 0,script: 'energybar'}, //popcake
+        {id: 16,colour: '#E7F527',solid: 0,script: 'energybarthesecond'} //popcake
     ],
     
     /*DATA*/
@@ -103,7 +103,7 @@ var map = {
         [2, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 2, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 2, 4, 2, 10, 2],
         [2, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 2, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 2, 4, 2, 10, 2],
         [2, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 2, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 2, 4, 2, 10, 2],
-        [2, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 2, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 2, 4, 2, 10, 2],
+        [2, 8, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 2, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 2, 4, 2, 10, 2],
         [2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 1, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 4, 2, 10, 2],
         [2, 1, 1, 1, 1, 1, 1, 1, 1, 1, 2, 1, 2, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 2, 4, 2, 10, 2],
         [2, 1, 1, 1, 1, 1, 1, 1, 1, 1, 2, 1, 2, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 2, 4, 2, 10, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2],
@@ -178,7 +178,7 @@ var map = {
         death: 'game.load_map(map);game.current_map.keys[10].solid = 1;game.current_map.keys[10].colour = "#813319";document.getElementById("energy").value -= 1',
         unlock: 'game.current_map.keys[10].solid = 0;game.current_map.keys[10].colour = "#555";',
         lock: 'game.current_map.keys[10].solid = 1;game.current_map.keys[10].colour = "#813319";',
-        energybar: 'document.getElementById("energy").value += 1;game.current_map.keys[15].script = " ";game.current_map.keys[15].colour = "lightblue"',
+        energybar: 'document.getElementById("ding").play();document.getElementById("energy").value += 1;game.current_map.keys[15].script = " ";game.current_map.keys[15].colour = "lightblue"',
         energybarthesecond: 'document.getElementById("energy").value += 1;game.current_map.keys[16].script = " ";game.current_map.keys[16].colour = "lightblue"'
     }
 };
@@ -209,7 +209,9 @@ var maptwo = {
         {id: 16,colour: '#EDA255',solid: 1}, //capstone2
         {id: 17,colour: '#0077BE',friction: {x: 0.9,y: 0.9},gravity: {x: 0,y: 0.1},jump: 1,fore: 1}, //water
         {id: 18,colour: '#0000B3',solid: 1}, //solid decor
-        {id: 19,colour: '#C93232',solid: 0,script: 'death'} //lava
+        {id: 19,colour: '#C93232',solid: 0,script: 'death'}, //lava
+        {id: 20,colour: '#E7F527',solid: 0,script: 'energybar'}, //popcake
+        {id: 21,colour: '#E7F527',solid: 0,script: 'energybarthesecond'} //popcake
     ],
     
     /*DATA*/
@@ -243,7 +245,7 @@ var maptwo = {
         [2, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 2, 10, 10, 10, 10, 10, 10, 10, 10, 10, 10, 10, 2, 1, 1, 1, 15],
         [2, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 2, 10, 10, 10, 10, 10, 10, 10, 10, 10, 10, 10, 10, 10, 2, 1, 1, 15],
         [2, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 2, 10, 10, 10, 10, 10, 10, 10, 10, 10, 10, 10, 10, 10, 10, 10, 2, 1, 15],
-        [2, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 2, 10, 10, 10, 10, 10, 10, 10, 10, 10, 10, 10, 10, 10, 10, 10, 10, 10, 2, 15],
+        [2, 8, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 2, 10, 10, 10, 10, 10, 10, 10, 10, 10, 10, 10, 10, 10, 10, 10, 10, 10, 2, 15],
         [2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 10, 10, 10, 10, 10, 10, 10, 10, 10, 10, 10, 10, 10, 10, 10, 10, 10, 2, 2],
         [2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 10, 10, 10, 10, 10, 10, 10, 2, 2, 2, 10, 10, 10, 10, 10, 10, 10, 2, 2],
         [2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 10, 10, 10, 10, 10, 10, 10, 10, 10, 10, 10, 10, 10, 10, 10, 10, 10, 2, 2],
@@ -260,7 +262,7 @@ var maptwo = {
         [2, 2, 2, 2, 2, 2, 3, 3, 12, 12, 12, 3, 3, 3, 3, 2, 2, 2, 10, 10, 10, 2, 2, 10, 10, 10, 2, 2, 10, 10, 10, 2, 2, 2, 2],
         [2, 2, 2, 2, 2, 2, 3, 3, 3, 12, 3, 3, 3, 3, 3, 3, 3, 3, 10, 10, 10, 2, 2, 10, 10, 10, 2, 2, 10, 10, 10, 3, 3, 3, 2],
         [2, 2, 2, 2, 2, 2, 3, 2, 2, 2, 2, 2, 2, 3, 3, 3, 3, 3, 10, 10, 10, 2, 2, 10, 10, 10, 2, 2, 10, 10, 10, 3, 3, 3, 2],
-        [2, 2, 2, 2, 2, 2, 3, 3, 3, 3, 3, 3, 3, 2, 3, 3, 3, 3, 10, 10, 10, 2, 2, 10, 10, 10, 2, 2, 10, 10, 10, 3, 3, 3, 2],
+        [2, 2, 2, 2, 2, 2, 3, 3, 3, 3, 3, 3, 3, 2, 3, 3, 3, 3, 10, 10, 10, 2, 2, 10, 10, 10, 2, 2, 10, 20, 10, 3, 3, 3, 2],
         [2, 2, 2, 2, 2, 2, 3, 3, 3, 3, 3, 3, 3, 3, 2, 3, 3, 3, 10, 10, 10, 10, 10, 10, 10, 10, 10, 10, 4, 4, 4, 3, 3, 3, 2],
         [2, 2, 2, 2, 2, 2, 3, 3, 3, 3, 3, 3, 3, 3, 3, 2, 2, 2, 9, 9, 9, 2, 2, 9, 9, 9, 2, 2, 2, 2, 2, 2, 2, 2, 2],
         [2, 2, 2, 2, 2, 2, 3, 3, 3, 3, 3, 3, 3, 3, 3, 2, 2, 2, 3, 3, 3, 2, 2, 3, 3, 3, 2, 2, 3, 3, 3, 2, 2, 2, 2],
@@ -311,7 +313,9 @@ var maptwo = {
         unlock: 'game.current_map.keys[10].solid = 0;game.current_map.keys[10].colour = "#555";game.current_map.keys[13].solid = 1;game.current_map.keys[13].colour = "#EDA255";game.current_map.keys[7].colour = "#555";game.current_map.keys[16].solid = 0;game.current_map.keys[16].colour = "#555"',
         lock: 'game.current_map.keys[10].solid = 1;game.current_map.keys[10].colour = "#EDA255";',
         secondlock: 'game.current_map.keys[13].solid = 0;game.current_map.keys[13].colour = "lightblue";game.current_map.keys[16].solid = 1;game.current_map.keys[16].colour = "#EDA255"',
-        lavabanish: 'game.current_map.keys[9].script = " ";game.current_map.keys[9].colour = "#EDA255";game.current_map.keys[9].solid = 1'
+        lavabanish: 'game.current_map.keys[9].script = " ";game.current_map.keys[9].colour = "#EDA255";game.current_map.keys[9].solid = 1',
+        energybar: 'document.getElementById("energy").value += 1;game.current_map.keys[20].script = " ";game.current_map.keys[20].colour = "#555"',
+        energybarthesecond: 'document.getElementById("energy").value += 1;game.current_map.keys[21].script = " ";game.current_map.keys[21].colour = "#555"'
     }
 };
 
