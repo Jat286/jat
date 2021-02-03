@@ -270,8 +270,15 @@ var maptwo = {
         [2, 2, 2, 2, 2, 2, 6, 2, 2, 19, 19, 19, 19, 2, 2, 2, 2, 2, 2, 18, 2, 2, 2, 2, 18, 2, 2, 2, 2, 18, 2, 2, 2, 3, 2],
         [2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 2, 3, 2],
         [2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 2, 3, 2],
-        [2, 2, 2, 2, 2, 2, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 2],
-        [2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 19, 19, 2, 2, 2, 2, 19, 2, 2, 2, 2, 19, 19, 2, 2, 6, 2]
+        [2, 2, 2, 2, 2, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 2],
+        [2, 2, 2, 2, 2, 3, 3, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 19, 19, 2, 2, 2, 2, 19, 2, 2, 2, 2, 19, 19, 2, 2, 6, 2],
+        [2, 2, 2, 2, 2, 3, 3, 3, 2, 3, 3, 2, 2, 3, 2, 2, 3, 3, 3, 3, 3, 3, 3, 2, 2, 3, 3, 2, 2, 3, 3, 3, 3, 3, 2],
+        [2, 2, 2, 2, 2, 3, 3, 3, 2, 3, 3, 3, 3, 3, 2, 2, 3, 3, 3, 3, 3, 3, 3, 2, 2, 3, 3, 3, 3, 3, 3, 3, 3, 3, 2],
+        [2, 2, 2, 2, 2, 3, 3, 3, 2, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 2],
+        [2, 2, 2, 2, 2, 3, 3, 2, 2, 3, 3, 2, 2, 3, 3, 3, 3, 3, 3, 21, 3, 3, 3, 3, 3, 3, 3, 2, 2, 3, 3, 3, 3, 3, 2],
+        [2, 2, 2, 2, 2, 3, 3, 3, 2, 3, 3, 3, 3, 3, 2, 2, 3, 3, 3, 3, 3, 3, 3, 2, 2, 3, 3, 3, 3, 3, 3, 3, 3, 3, 2],
+        [2, 2, 2, 2, 2, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 2],
+        [2, 2, 2, 2, 2, 19, 19, 6, 2, 2, 19, 19, 19, 19, 19, 19, 19, 2, 2, 2, 2, 2, 19, 19, 19, 19, 19, 19, 2, 2, 2, 2, 2, 2, 2]
     ],
 
     /*GRAVITY*/
@@ -314,8 +321,8 @@ var maptwo = {
         lock: 'game.current_map.keys[10].solid = 1;game.current_map.keys[10].colour = "#EDA255";',
         secondlock: 'game.current_map.keys[13].solid = 0;game.current_map.keys[13].colour = "lightblue";game.current_map.keys[16].solid = 1;game.current_map.keys[16].colour = "#EDA255"',
         lavabanish: 'game.current_map.keys[9].script = " ";game.current_map.keys[9].colour = "#EDA255";game.current_map.keys[9].solid = 1',
-        energybar: 'maptwo.player.x = 29;maptwo.player.y = 40;document.getElementById("energy").value += 1;game.current_map.keys[20].script = " ";game.current_map.keys[20].colour = "#555";document.getElementById("ding").play()',
-        energybarthesecond: 'document.getElementById("energy").value += 1;game.current_map.keys[21].script = " ";game.current_map.keys[21].colour = "#555";document.getElementById("ding").play()'
+        energybar: 'maptwo.player.x = 29;maptwo.player.y = 40;document.getElementById("energy").value += 1;game.current_map.keys[20].script = " ";game.current_map.keys[20].colour = "#999";document.getElementById("ding").play()',
+        energybarthesecond: 'maptwo.player.x = 18;maptwo.player.y = 55;document.getElementById("energy").value += 1;game.current_map.keys[21].script = " ";game.current_map.keys[21].colour = "#999";document.getElementById("ding").play()'
     }
 };
 

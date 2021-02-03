@@ -29,12 +29,24 @@ document.onkeydown = function(e) {
 		    window.addEventListener('contextmenu', function (e) {
               e.preventDefault();
             }, false);
+            
 			function checkPassword() {
 			  var password = document.getElementById("passwordBox");
 			  var passwordText = password.value;
 			  if (passwordText == "thisisnotthepassword") {
 			  	return true;
-			  };
+			  }
+			  var i = 0;
+              var txt = 'ACCESS DENIED ';
+              var speed = 100;
+              function typeWriter() {
+                if (i < txt.length) {
+                  document.getElementById("denied").innerHTML += txt.charAt(i);
+                  i++;
+                  setTimeout(typeWriter, speed);
+                };
+              };
+			  typeWriter();
 			  return false;
 			};
 		</script>
@@ -42,8 +54,9 @@ document.onkeydown = function(e) {
 	<body id="body">
 		<h1 align="center">Jat</h1>
 		<h3 align="center">This website requires you to enter a password to view it! You must pass The Test Of Doom to get the password.</h3>
-		<h3 align="center">Take The Test Of Doom at <a href="thetest.html" id="a2">jomunatech.co.uk/thetest.html</a></h3>
+		<h3 align="center">Take The Test Of Doom at <a href="thetest.html" id="a2">jomunatech.co.uk/thetest</a></h3>
 		<p align="center">Password: <input id="passwordBox" type="password" /></p>
 		<p align="center"><a href="2Ajnfd_jhJohUhHHuhdKpOKJdhjhdnNdjncsdjv_dfiRdkcdbmgklfvjJohknjsvn_HcnJvnnfjJJsajkfnJjfudUdnqjQJoh.html" onclick="return checkPassword();" id="a">Check Password</a></p>
+		<h2 align="center" id="denied" style="font-weight:bold;color:red;"> </h2>
 	</body>
 </html>
