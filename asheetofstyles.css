@@ -1,4 +1,4 @@
-/* starcode-version-3.0 =) embed data-starData attr {from connectedHtml} */
+/* sc_xml data-starData attr_bisc {from connectedHtml} */
 
 /* Styles */
 @import url('https://fonts.googleapis.com/css2?family=Ubuntu&display=swap');
@@ -213,4 +213,36 @@ a[data-starData='a2'] {
 }
 #body {
 	  transition: margin-left 1s;
+}
+#thebottom {
+	background-color:#eee;
+	background-image: url('Images/bgforbottom.png');
+	text-align:center;
+}
+#thebottom a {
+    text-decoration:none;
+}
+#thebottom p {
+    font-size:12px;
+}
+#thebottom h2 {
+    font-size:16px;
+}
+::-webkit-scrollbar {
+    width: 8px;
+    height: 7px;
+}
+::-webkit-scrollbar-thumb {
+    background-color: black;
+    -webkit-border-radius: 0px;
+    -moz-border-radius: 0px;
+    -ms-border-radius: 0px;
+    border-radius: 0px;
+}
+::-webkit-scrollbar-track-piece {
+    background-color: #888;
+    -webkit-border-radius: 0px;
+    -moz-border-radius: 0px;
+    -ms-border-radius: 0px;
+    border-radius: 0px;
 }

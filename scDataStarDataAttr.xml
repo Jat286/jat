@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<sc version="3.0" language="xml">    
+    <biscuit for="data-starData attr" call="embed.name_bisc" />
+    <author of="data-starData attr_bisc" bwid="8164" jrnc="no" />
+    <embed name="data-starData attr">
+    	<attr type="dataValue">data-starData</attr>
+    	<properties for="attr_data-starData">
+    		<js>allow</js>
+    		<css>allow</css>
+    		<openelement>true</openelement>
+    		<closeelement>htmlcomment</closeelement>
+    	</properties>
+    </embed>
+</sc>
