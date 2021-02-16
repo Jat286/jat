@@ -9,10 +9,6 @@
 /*Main Title*/
 body[data-starData='body-']{font-family:'Ubuntu', sans-serif;  justify-content:center;}
 
-h2[data-starData='h2-1'] {
-	text-align: center;
-}
-
 .overlay::-webkit-scrollbar {
   display: none;
 }
@@ -37,8 +33,9 @@ h2[data-starData='h2-1'] {
 }
 
 h1[data-starData='h1-1'] {
-	text-align: center;
 	-webkit-user-select:none;-moz-user-select:none;-ms-user-select:none;user-select:none;
+    border:5px solid black;margin:0 auto;width:120px;padding:2px;border-radius:7px;
+    font-size:58px;cursor:pointer;text-align: center;
 }
 
 a[data-starData='a'] {
@@ -57,14 +54,14 @@ a[data-starData='a2'] {
 
 #toolbar {
 	margin-right:-8px;
-	margin-left: 4.5px;
+	margin-left: 2px;
 	margin-top:-8px;
-	background-image:none;
 	background-color:#ccc;
-	background-size: cover;
 	height:42px;
-	z-index:0;
 	max-width:100%;
+	display:block;
+	top:0;
+	position: sticky; position: -webkit-sticky;
 }
 
 .dropbtn {
@@ -232,18 +229,18 @@ a[data-starData='a2'] {
     font-size:16px;
 }
 ::-webkit-scrollbar {
-    width: 8px;
+    width: 10px;
     height: 7px;
 }
 ::-webkit-scrollbar-thumb {
-    background-color: black;
+    background-color: #999;
     -webkit-border-radius: 0px;
     -moz-border-radius: 0px;
     -ms-border-radius: 0px;
     border-radius: 0px;
 }
 ::-webkit-scrollbar-track-piece {
-    background-color: #888;
+    background-color: #ddd;
     -webkit-border-radius: 0px;
     -moz-border-radius: 0px;
     -ms-border-radius: 0px;
