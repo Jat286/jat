@@ -174,8 +174,6 @@ a[data-starData='a2'] {
 }
 
 @media screen and (max-height: 450px) {
-  .overlay a {font-size: 20px}
-  .overlay p {font-size: 20px}
   .overlay .closebtn {
     font-size: 40px;
     top: 15px;
@@ -211,11 +209,16 @@ a[data-starData='a2'] {
 		display:none;
 	}
 }
+@media screen and (max-width: 600px) {
+  #credits {
+    font-size: 12px;
+  }
+}
 #body {
 	  transition: margin-left 1s;
 }
 #thebottom {
-	background-color:#eee;
+	background-color:#fff;
 	background-image: url('Images/bgforbottom.png');
 	text-align:center;
 }
