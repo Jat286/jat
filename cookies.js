@@ -1,4 +1,4 @@
-var x = document.cookie;
-document.cookie = "username=username";
-document.cookie = "password=*********";
-document.cookie = "dateofbirth=ddmmyyyy";
+var c = document.cookie;
+document.cookie = "username=username; path=/";
+document.cookie = "password=*********; path=/";
+document.cookie = "dateofbirth=ddmmyyyy; path=/";
