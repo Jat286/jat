@@ -3,13 +3,21 @@
 	<head>
 		<title>Jat Password</title>
 		<base target="_blank" />
+		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" />  
 		<style>
+		    @import url('https://fonts.googleapis.com/css2?family=Share&display=swap');
 		    html{font-family:sans-serif;-webkit-user-select:none;-moz-user-select:none;-ms-user-select:none;user-select:none;}
 		    a#a{text-decoration:none;color:#0000b3;font-size:25px;}
 		    a#a2{text-decoration:none;color:#0000b3;}
 		    input{height:25px;width:200px;}
 		    p{font-size:20px;}
+		    h1[data-starData='h1-1']{-webkit-user-select:none;-moz-user-select:none;-ms-user-select:none;user-select:none;
+                border:5px solid #333;margin:0 auto;width:120px;padding:2px;border-radius:7px;
+                font-size:58px;text-align: center;font-family:'share'}
+            fieldset.fieldset{margin:0 auto;width:500px;border:4px solid #555}
+            legend{background-color:#555;border:none;color:white;padding:1px 4px;border-radius:5px;}
 		</style>
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
 		<script>
 document.onkeydown = function(e) {
         if (e.ctrlKey && 
@@ -34,11 +42,31 @@ document.onkeydown = function(e) {
 			function checkPassword() {
 			  var password = document.getElementById("passwordBox");
 			  var passwordText = password.value;
-			  if (passwordText == "thisisnotthepassword") {
+			  var usrname = document.getElementById("usrnameBox");
+			  var usrnameText = usrname.value;
+			  //me
+			  if (passwordText == "1Zw2dtp3wbh@hwgf1$" && usrnameText == "Carrot") {
+			  	localStorage.setItem("name", usrnameText);
+			  	return true;
+			  //edward
+			  } else if (passwordText == "CaRbON=C6" && usrnameText == "ELikesJat") {
+			  	localStorage.setItem("name", usrnameText);
+			  	return true;
+			  //tomo
+			  } else if (passwordText == "ma ma" && usrnameText == "ma") {
+			  	localStorage.setItem("name", usrnameText);
+			  	return true;
+			  //mum
+			  } else if (passwordText == "JBntM" && usrnameText == "MB'se2rU") {
+			  	localStorage.setItem("name", usrnameText);
+			  	return true;
+			  //justin
+			  } else if (passwordText == "Ikeastoragebox987!" && usrnameText == "accountusername.justin") {
+			  	localStorage.setItem("name", usrnameText);
 			  	return true;
 			  }
 			  var i = 0;
-              var txt = 'ACCESS DENIED ';
+              var txt = 'ACCESS DENIED. PLEASE TRY AGAIN. ';
               var speed = 100;
               function typeWriter() {
                 if (i < txt.length) {
@@ -50,14 +78,24 @@ document.onkeydown = function(e) {
 			  typeWriter();
 			  return false;
 			};
+			function show() {
+                var x = document.getElementById("passwordBox");
+                if (x.type === "password") {
+                    x.type = "text";
+                } else {
+                    x.type = "password";
+                }
+            }
 		</script>
 	</head>
 	<body id="body">
-		<h1 align="center">Jat</h1>
-		<h3 align="center">This website requires you to enter a password to view it! You must pass The Test Of Doom to get the password.</h3>
+    	<br /><h1 data-starData="h1-1" id="header"><span style="color: #ff0040;">J</span><span style="color: #ff7500;">A</span><span style="color: #ffbf00;">T</span><span style="color: #080;">!</span></h1>
+		<br /><fieldset class="fieldset"><legend>Log In</legend>
+		<p align="center">Username: <input id="usrnameBox" type="text" required /></p>
+		<p align="center">Password: &nbsp;<input id="passwordBox" type="password" required /><!--<button onclick="show()" style="height: 31px;"><i class="fa fa-eye"> </i></button>--></p>
+		<p align="center"><a target="_parent" href="2Ajnfd_jhJohUhHHuhdKpOKJdhjhdnNdjncsdjv_dfiRdkcdbmgklfvjJohknjsvn_HcnJvnnfjJJsajkfnJjfudUdnqjQJoh.html" onclick="return checkPassword();" id="a">Check Details</a></p>
+		<h2 align="center" id="denied" style="font-weight:bold;color:red;"> </h2></fieldset>
+		<br /><h3 align="center">Don't have a JatAccount? You must pass The Test Of Doom to get one. <br/></h3>
 		<h3 align="center">Take The Test Of Doom at <a href="thetest.html" id="a2">jomunatech.co.uk/thetest</a></h3>
-		<p align="center">Password: <input id="passwordBox" type="password" /></p>
-		<p align="center"><a target="_parent" href="2Ajnfd_jhJohUhHHuhdKpOKJdhjhdnNdjncsdjv_dfiRdkcdbmgklfvjJohknjsvn_HcnJvnnfjJJsajkfnJjfudUdnqjQJoh.html" onclick="return checkPassword();" id="a">Check Password</a></p>
-		<h2 align="center" id="denied" style="font-weight:bold;color:red;"> </h2>
 	</body>
 </html>

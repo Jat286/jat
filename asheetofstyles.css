@@ -66,7 +66,14 @@ a[data-starData='a2'] {
 	z-index: 999;
 	position: sticky; position: -webkit-sticky;
 }
-
+@keyframes twirl {
+    from {
+        transform:rotate(0deg);
+    }
+    to {
+        transform:rotate(360deg);
+    }
+}
 .dropbtn {
   background-color: #ccc;
   color: #000;
@@ -172,7 +179,11 @@ a[data-starData='a2'] {
   margin-top:20px;
   font-size: 30px;
 }
-
+.thingymabob {
+	display:none;
+    text-align: center;
+    font-size: 20px;
+}
 @media screen and (max-height: 450px) {
   .overlay .closebtn {
     font-size: 40px;
@@ -213,6 +224,14 @@ a[data-starData='a2'] {
   #credits {
     font-size: 12px;
   }
+}
+@media screen and (max-width: 900px) {
+	.main-carousel {
+		display:none;
+	}
+	.thingymabob {
+		display:block;
+	}
 }
 #body {
 	  transition: margin-left 1s;
@@ -267,6 +286,11 @@ a[data-starData='a2'] {
   border-radius:0.75em;
   text-decoration: none;
 }
+@media screen and (max-width: 600px) {
+  #topButton {
+    padding: 5px;
+  }
+}
 .modal {
   display: none; /* Hidden by default */
   position: fixed; /* Stay in place */
@@ -306,8 +330,6 @@ a[data-starData='a2'] {
   from {top:-300px; opacity:0}
   to {top:0; opacity:1}
 }
-
-
 .modal-header {
   padding: 2px 16px;
   background-color: red;
@@ -363,4 +385,7 @@ a[data-starData='a2'] {
   font-size: 80px;
   color: white;
   counter-increment: carousel-cell;
+}
+#credits {
+	display: none;
 }

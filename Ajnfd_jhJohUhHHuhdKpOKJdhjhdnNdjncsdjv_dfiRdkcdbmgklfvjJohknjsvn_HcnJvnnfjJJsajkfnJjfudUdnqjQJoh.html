@@ -40,7 +40,7 @@
                     <p>If you wish to accept, press Accept Cookies. If you wish to refuse, press Deny All.</p>
                 </div>
                 <div class="modal-footer">
-                    <button style="margin-left: 320px;" class="btn">&check; Accept Cookies</button><button style="float:right;margin-right:320px;" class="btn2">&cross; Deny All</button>
+                    <button style="margin-left: 320px;" class="btn" id="btnyes">&check; Accept Cookies</button><button style="float:right;margin-right:320px;" class="btn2">&cross; Deny All</button>
                 </div>
             </div>
         </div>
@@ -282,6 +282,7 @@
             theBody.style.fontWeight = fontStyle;
             var thingBorder = localStorage.getItem("borderKey");
             document.getElementById("header").style.border = thingBorder;	
+            document.getElementById("name").innerHTML = localStorage.getItem("name");
       	}
       </script>
   </div>
@@ -296,21 +297,24 @@
     	<h1 data-starData="h1-1" id="header" onclick="jat()"><span style="color: #ff0040;">J</span><span style="color: #ff7500;">A</span><span style="color: #ffbf00;">T</span><span style="color: #080;">!</span></h1>
     	<noscript>Oh dear turn JavaScript on or this won't work.</noscript>
         	<div>
-        		    	<p align="center"><span id="ct"> </span></p>
+        		    	<p align="center">Hi <span id="name"> </span>! The time is <span id="ct"> </span></p>
     		<div class="main-carousel">
                 <div class="carousel-cell" id="carousel-cell-1">...</div>
                 <div class="carousel-cell" id="carousel-cell-2">...</div>
                 <div class="carousel-cell" id="carousel-cell-3">...</div>
-            </div>
+           </div>
+           <h1 class="thingymabob" style="color: #0000b3;">Not Sure What It Does</h1>
+           <h1 class="thingymabob" style="color: red;">Used by about Five People</h1>
+           <h1 class="thingymabob" style="color: #53b85c;">To Play MaDefenders</h1>
     	<h2 id="toggleTarget" style="display:block;" align="center"> </h2>
             <script type="text/javascript"> 
             function display_c() {
-                var refresh=1000; // Refresh rate in milli seconds
+                var refresh=1000;
                 mytime=setTimeout('display_ct()',refresh);
             }
             function display_ct() {
                 var z = new Date();
-                var x1=z.toUTCString();// changing the display to UTC string
+                var x1=z.toUTCString();
                 document.getElementById('ct').innerHTML = x1;
                 tt=display_c();
             };
@@ -405,7 +409,7 @@ window.onclick = function(event) {
                     $("#credits").slideToggle();
                 });
     	    </script>
-    	    <pre id="credits" style="display:none;">      
+    	    <pre id="credits">      
     	       __                      
     o__( ·)<  [MOO]      
   \____)           
