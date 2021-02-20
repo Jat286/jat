@@ -125,7 +125,14 @@
       <a title="Grandad Evening"><canvas class="canvas" onclick="orangeChange()" height="50px" width="75px" style="background-color:#ff6500;border-radius:5px;border-top:5px solid grey;border-left:5px solid grey;border-right:5px solid grey;border-bottom:12px solid grey;float:left;">:(</canvas></a>
       <a title="Green-fingered Green"><canvas class="canvas" onclick="dGreenChange()" height="50px" width="75px" style="background-color:#040;border-radius:5px;border-top:5px solid grey;border-left:5px solid grey;border-right:5px solid grey;border-bottom:12px solid grey;float:left;">:(</canvas></a>
       <p>&nbsp;</p><p>&nbsp;</p>
-      <button id="btn3">Deny Cookies</button>
+      <!--<button id="btn3">Deny Cookies</button>-->
+      <input type="text" placeholder="Change Nickname" id="changeNicknameBoxOfDoom" /><input type="submit" id="submitButtonOfDoom" onclick="changeNick()" />
+      <script>
+      	function changeNick () {
+			var Box = document.getElementById("changeNicknameBoxOfDoom").value;
+			localStorage.setItem("name", Box);
+		}
+      </script>
       <a onclick="resetColour()" id="resetButton">Reset</a>
       <br/>
       <br/>
@@ -199,6 +206,7 @@
             bar.style.backgroundImage = "none";
             bar.style.backgroundColor = "#080";
             theBody.style.fontFamily = "'Share'";
+            theBody.style.fontWeight = "bold";
             var backgroundColour = "#080";
             localStorage.setItem("colourKey", backgroundColour);
             var fontFamily = "'Share'";
@@ -206,6 +214,8 @@
             document.getElementById("header").style.border = "5px solid #080";            
             var thingBorder = "5px solid #080";
             localStorage.setItem("borderKey", thingBorder);
+            var fontStyle = "bold";
+            localStorage.setItem("styleKey", fontStyle);
       	}
       	function purpleChange() {
             bar.style.backgroundImage = "none";
