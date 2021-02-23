@@ -6,9 +6,13 @@
 		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" />  
 		<style>
 		    @import url('https://fonts.googleapis.com/css2?family=Share&display=swap');
-		    html{font-family:sans-serif;-webkit-user-select:none;-moz-user-select:none;-ms-user-select:none;user-select:none;}
+		    html{font-family:sans-serif;-webkit-user-select:none;-moz-user-select:none;-ms-user-select:none;user-select:none;
+		      font-weight: bold;}
 		    a#a{text-decoration:none;color:#0000b3;font-size:25px;}
 		    a#a2{text-decoration:none;color:#0000b3;}
+		    a#a3{text-decoration:none;color:#0000b3;}
+		    a#a4{text-decoration:none;color:#0000b3;}
+		    a#a5{text-decoration:none;color:#0000b3;}
 		    input{height:25px;width:200px;}
 		    p{font-size:20px;}
 		    h1[data-starData='h1-1']{-webkit-user-select:none;-moz-user-select:none;-ms-user-select:none;user-select:none;
@@ -16,6 +20,12 @@
                 font-size:58px;text-align: center;font-family:'share'}
             fieldset.fieldset{margin:0 auto;width:500px;border:4px solid #555}
             legend{background-color:#555;border:none;color:white;padding:1px 4px;border-radius:5px;}
+            .tooltip{position:relative;display:inline-block;}
+            .tooltip .tooltip-text{visibility:hidden;width:195px;background-color:#555;color:#fff;text-align:center;border-radius:6px;
+                padding:10px 0;position:absolute;z-index:1;bottom:150%;left:50%;margin-left:-60px;font-size:10px;}
+            .tooltip:hover .tooltip-text{visibility:visible;}
+            .tooltip:hover{border-bottom:1px dotted black;}
+            #tooltip1{width:200px !important;}
 		</style>
 		<meta name="viewport" content="width=device-width, initial-scale=1.0">
 		<script>
@@ -33,8 +43,11 @@ document.onkeydown = function(e) {
         	e.shiftKey &&
         	(e.keyCode == 67)) {
         	return false;
-                }
-};
+              } else if (
+           (e.keyCode == 13)) {
+           document.getElementById('a').click();
+         } 
+            };
 		    window.addEventListener('contextmenu', function (e) {
               e.preventDefault();
             }, false);
@@ -49,7 +62,7 @@ document.onkeydown = function(e) {
 			  	return true;
 			  //edward
 			  } else if (passwordText == "CaRbON=C6" && usrnameText == "ELikesJat") {
-			  	return true;
+			  	return true; 
 			  //tomo
 			  } else if (passwordText == "ma ma" && usrnameText == "ma") {
 			  	return true;
@@ -58,6 +71,15 @@ document.onkeydown = function(e) {
 			  	return true;
 			  //justin
 			  } else if (passwordText == "Ikeastoragebox987!" && usrnameText == "accountusername.justin") {
+			  	return true;
+			  //james
+			  } else if (passwordText == "19283746jam" && usrnameText == "MR.bacon105") {
+			    return true;
+			  //sarah
+			  } else if (passwordText == "Chickens2" && usrnameText == "tangylemon1") {
+			  	return true;
+			  //millie
+			  } else if (passwordText == "taylorswift" && usrnameText == "millieg13") {
 			  	return true;
 			  }
 			  var i = 0;
@@ -90,7 +112,12 @@ document.onkeydown = function(e) {
 		<p align="center">Password: &nbsp;<input id="passwordBox" type="password" /><!--<button onclick="show()" style="height: 31px;"><i class="fa fa-eye"> </i></button>--></p>
 		<p align="center"><a target="_parent" href="2Ajnfd_jhJohUhHHuhdKpOKJdhjhdnNdjncsdjv_dfiRdkcdbmgklfvjJohknjsvn_HcnJvnnfjJJsajkfnJjfudUdnqjQJoh.html" onclick="return checkPassword();" id="a">Check Details</a></p>
 		<h2 align="center" id="denied" style="font-weight:bold;color:red;"> </h2></fieldset>
-		<br /><h3 align="center">Don't have a JatAccount? You must pass The Test Of Doom to get one. <br/></h3>
-		<h3 align="center">Take The Test Of Doom at <a href="thetest.html" id="a2">jomunatech.co.uk/thetest</a></h3>
+		<br /><h3 align="center">Don't have a JatAccount? You must pass The Test Of Doom to get one. <a id="a5">
+			 	<sup style="font-size:8px;cursor:pointer;" class="tooltip">[?]<span class="tooltip-text" id="tooltip1">The test may be confusing to you if you don't know what an Emibug is.
+			 		Just to warn you. If you can't take the test, see below for Logged Out Mode.</span></sup></a></h3></h3>
+		<h3 align="center">Take The Test Of Doom at <a href="thetest.html" id="a2">jomunatech.co.uk/thetest</a>.
+			 Or you can <a id="a3" href="u0/home.html">Use Jat Logged Out</a><a id="a4">
+			 	<sup style="font-size:8px;cursor:pointer;" class="tooltip">[?]<span class="tooltip-text">You can use Jat logged out (incognito), but no settings that you set will be saved
+			 		and you cannot change your nickname or use JatPro, etc.</span></sup></a></h3>
 	</body>
 </html>

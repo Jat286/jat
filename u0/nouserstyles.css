@@ -1,0 +1,254 @@
+/* sc_xml data-starData attr_bisc {from connectedHtml} */
+
+/* Styles */
+@import url('https://fonts.googleapis.com/css2?family=Ubuntu&display=swap');
+/*Main Title*/
+body[data-starData='body-']{font-family:'Ubuntu', sans-serif;  justify-content:center;}
+html {
+	scroll-behavior: smooth;
+}
+::selection {
+  color: #ffffff;
+  background: #222;
+}
+
+.vl {
+  border-left: 5px solid black;
+  height: 500px;
+  position: absolute;
+  left: 50%;
+  margin-left: -3px;
+  top: 270px;
+}
+
+h1[data-starData='h1-1'] {
+	-webkit-user-select:none;-moz-user-select:none;-ms-user-select:none;user-select:none;
+    border:5px solid black;margin:0 auto;width:120px;padding:2px;border-radius:7px;
+    font-size:58px;cursor:pointer;text-align: center;
+}
+
+a[data-starData='a'] {
+    color:#0000b3;
+    text-align: center;
+    font-size:20px;
+    text-decoration:none;
+}
+
+a[data-starData='a2'] {
+    color:#000;
+    text-align: center;
+    font-size:20px;
+    text-decoration:none;
+   }
+
+#toolbar {
+	margin-right:0px;
+	margin-left: 2px;
+	margin-top:-8px;
+	background-color:#ccc;
+	height:42px;
+	max-width:100%;
+	display:block;
+	top:0;
+	z-index: 999;
+	position: sticky; position: -webkit-sticky;
+}
+@keyframes twirl {
+    from {
+        transform:rotate(0deg);
+    }
+    to {
+        transform:rotate(360deg);
+    }
+}
+.dropbtn {
+  background-color: #ccc;
+  color: #000;
+  padding-left: 15px;
+  padding-right: 15px;
+  padding-bottom: -8px;
+  padding-top: 10px;
+  font-size: 16px;
+  border:none;
+  margin-left:-10px;
+  margin-top:-10px;
+  height:52px;
+}
+
+.dropdown {
+  position: relative;
+  display: inline-block;
+}
+
+.dropdown-content {
+  display: none;
+  position: absolute;
+  background-color: #f1f1f1;
+  min-width: 150px;
+  z-index: 1;
+  margin-left: -10px;
+}
+
+.dropdown-content a {
+  color: black;
+  padding: 12px 16px;
+  text-decoration: none;
+  display: block;
+}
+
+.dropdown-content a:hover {background-color: #ddd;}
+
+.dropdown:hover .dropdown-content {display: block;}
+
+.a {
+  margin-left:0%;
+  color: black;
+  text-align: center;
+  padding: 11px;
+  text-decoration: none;
+  font-size: 26px;
+  border-radius: 5px;
+  font-size: 25px;
+    background-color: #ddd;
+}
+
+.a:hover {
+  background-color: #bbb;
+  color: black;
+}
+.thingymabob {
+	display:none;
+    text-align: center;
+    font-size: 20px;
+}
+  .asmall {
+  	display:none;
+  }
+@media screen and (max-width: 600px) {
+  .a {
+  	display: none;
+  }
+  .asmall {
+  	display:block;
+  }
+}
+@media print {
+	#toolbar {
+		display:none;
+	}
+}
+@media screen and (max-width: 600px) {
+  #credits {
+    font-size: 12px;
+  }
+}
+@media screen and (max-width: 900px) {
+	.main-carousel {
+		display:none;
+	}
+	.thingymabob {
+		display:block;
+	}
+}
+#body {
+	  transition: margin-left 1s;
+}
+#thebottom {
+	background-color:#fff;
+	text-align:center;
+}
+#thebottom a {
+    text-decoration:none;
+}
+#thebottom p {
+    font-size:12px;
+}
+#thebottom h2 {
+    font-size:16px;
+}
+::-webkit-scrollbar {
+    width: 10px;
+    height: 7px;
+}
+::-webkit-scrollbar-thumb {
+    background-color: #999;
+    -webkit-border-radius: 0px;
+    -moz-border-radius: 0px;
+    -ms-border-radius: 0px;
+    border-radius: 0px;
+}
+::-webkit-scrollbar-track-piece {
+    background-color: #ddd;
+    -webkit-border-radius: 0px;
+    -moz-border-radius: 0px;
+    -ms-border-radius: 0px;
+    border-radius: 0px;
+}
+#topButton {
+  display: none;
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  z-index: 99;
+  border: none;
+  outline: none;
+  background-color: #24bdff;
+  color: #000;
+  cursor: pointer; 
+  font-family: 'Ubuntu';
+  font-size: 18px;
+  font-weight: bold;
+  padding: 15px;
+  border-radius:0.75em;
+  text-decoration: none;
+}
+@media screen and (max-width: 600px) {
+  #topButton {
+    padding: 5px;
+  }
+}
+.main-carousel {
+  background: #EEE;
+}
+.carousel-cell {
+  width: 100%;
+  height: 200px;
+  margin-right: 10px;
+  background: #53b85c;
+  border-radius: 5px;
+  counter-increment: carousel-cell;
+}
+#carousel-cell-1:before {
+  display: block;
+  text-align: center;
+  content: 'Not Sure What It Does';
+  background: #0000b3;
+  line-height: 200px;
+  border-radius: 5px;
+  font-size: 80px;
+  color: white;
+  counter-increment: carousel-cell;
+}
+#carousel-cell-2:before {
+  display: block;
+  text-align: center;
+  content: 'Used By About Five People';
+  background: red;
+  line-height: 200px;
+  border-radius: 5px;
+  font-size: 80px;
+  color: white;
+  counter-increment: carousel-cell;
+}
+#carousel-cell-3:before {
+  display: block;
+  text-align: center;
+  content: 'To Play MaDefenders';
+  line-height: 200px;
+  font-size: 80px;
+  color: white;
+  counter-increment: carousel-cell;
+}
+#credits {
+	display: none;
+}
