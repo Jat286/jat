@@ -1,6 +1,18 @@
-function runGame () {
 /*
-Copyright (c) 2013 dissimulate at codepen
+
+    TTFOUR AND JATGAMES PRESENT
+
+|‾\     /‾|      /‾\
+|  \   /  |     / _ \     _____________
+| \ \_/ / |    / /_\ \    | DEFENDERS |    
+| |\___/| |   /  ___  \   ‾‾‾‾‾‾‾‾‾‾‾‾‾
+| |     | |  / /     \ \
+|_|     |_| /_/       \_\  
+
+Original Engine Copyright (c) 2013 dissimulate at Codepen (codepen.io)
+Story Jomun Rights NoCopy Tomo Technology Four
+Game/Level Design Jomun Rights NoCopy Jomuneziun A Technology Games
+The pronounciation of 'Ma' is 'Mah' and 't'Honza' is 'Honza'
 
 Permission is hereby granted, free of charge, to any person obtaining a copy
 of this software and associated documentation files (the "Software"), to deal
@@ -8,7 +20,6 @@ in the Software without restriction, including without limitation the rights
 to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
 copies of the Software, and to permit persons to whom the Software is
 furnished to do so, subject to the following conditions:
-
 The above copyright notice and this permission notice shall be included in
 all copies or substantial portions of the Software.
 
@@ -19,7 +30,19 @@ AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
 LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
 THE SOFTWARE.
+
+Game Story:
+The Sacred Ma of the Tomobugs was once kept in the three Temples of The Ma in The Jungle. 
+While they remained safe, the land of t'Honza was happy and well. One fateful day,
+10000 years ago, a dark spirit called Evilz caused three great floods of the city 
+and in each one snuck into the temples to steal the sacred pieces of The Ma. You are a 
+young Tomobug who is a member of the MaDefenders, a secret group of bugs determined to 
+save The Ma. You start your mission by making your way through MaDefenders HQ before
+heading out into the Desert and beyond... Can you save The Ma from Evilz? No-one knows.   
+
 */
+
+function runGame () {
 
 /*CHECK ENERGY 0*/
 
@@ -176,7 +199,7 @@ var map = {
 
     scripts: {
         change_colour: 'game.player.colour = "#"+(Math.random()*0xFFFFFF<<0).toString(16);',
-        next_level: 'mapselect.player.x = 7;mapselect.player.y = 6;game.load_map(mapselect);mapselect.keys[4].colour = "#ddd";mapselect.keys[4].script = " ";document.getElementById("listofgames2").style.display = "block";document.getElementById("displayLevel").innerHTML = "Level 1/2: Ma Pyramid"',
+        next_level: 'document.getElementById("victory_sound").play();mapselect.player.x = 7;mapselect.player.y = 6;game.load_map(mapselect);mapselect.keys[4].colour = "#ddd";mapselect.keys[4].script = " ";document.getElementById("listofgames2").style.display = "block";document.getElementById("displayLevel").innerHTML = "Level 1/2: Ma Pyramid"',
         death: 'document.getElementById("game_over_sound").play();game.load_map(map);game.current_map.keys[10].solid = 1;game.current_map.keys[10].colour = "#813319";document.getElementById("energy").value -= 1',
         unlock: 'game.current_map.keys[10].solid = 0;game.current_map.keys[10].colour = "#555";',
         lock: 'game.current_map.keys[10].solid = 1;game.current_map.keys[10].colour = "#813319";',
@@ -325,7 +348,7 @@ var maptwo = {
 
     scripts: {
         change_colour: 'game.player.colour = "#"+(Math.random()*0xFFFFFF<<0).toString(16);',
-        next_level: 'mapselect.player.x = 12;mapselect.player.y = 4;game.load_map(mapselect);mapselect.keys[5].colour = "#ddd";mapselect.keys[5].script = " ";document.getElementById("listofgames3").style.display = "block";document.getElementById("displayLevel").innerHTML = "Level 1/3: Coral Sea"',
+        next_level: 'document.getElementById("victory_sound").play();mapselect.player.x = 12;mapselect.player.y = 4;game.load_map(mapselect);mapselect.keys[5].colour = "#ddd";mapselect.keys[5].script = " ";document.getElementById("listofgames3").style.display = "block";document.getElementById("displayLevel").innerHTML = "Level 1/3: Coral Sea"',
         death: 'document.getElementById("game_over_sound").play();game.load_map(maptwo);document.getElementById("energy").value -= 1',
         unlock: 'game.current_map.keys[10].solid = 0;game.current_map.keys[10].colour = "#555";game.current_map.keys[13].solid = 1;game.current_map.keys[13].colour = "#EDA255";game.current_map.keys[7].colour = "#555";game.current_map.keys[16].solid = 0;game.current_map.keys[16].colour = "#555"',
         lock: 'game.current_map.keys[10].solid = 1;game.current_map.keys[10].colour = "#EDA255";',
@@ -361,33 +384,33 @@ var mapthree = {
    
     data: [
         [2, 2, 2, 2, 11, 11, 11, 11, 11, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2],
-        [2, 2, 2, 2, 11, 11, 11, 11, 11, 2, 2, 2, 2, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 2],
-        [2, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 2, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 2],
-        [2, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 2, 1, 1, 1, 1, 1, 1, 1, 1, 1, 12, 12, 1, 1, 1, 1, 1, 1, 1, 12, 12, 1, 2],
-        [2, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 2, 1, 1, 1, 1, 1, 1, 1, 1, 1, 12, 12, 1, 1, 1, 1, 1, 1, 1, 12, 12, 1, 2],
-        [2, 0, 0, 10, 10, 0, 0, 0, 10, 10, 0, 0, 2, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 2],
-        [2, 0, 0, 10, 0, 10, 0, 10, 0, 10, 0, 0, 2, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 2],
-        [2, 0, 0, 10, 0, 0, 10, 0, 0, 10, 0, 0, 2, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 2],
-        [2, 0, 0, 10, 0, 0, 0, 0, 0, 10, 0, 0, 2, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 2],
-        [2, 0, 0, 10, 0, 0, 0, 0, 0, 10, 0, 0, 2, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 2],
-        [2, 0, 0, 10, 0, 0, 0, 0, 0, 10, 0, 0, 2, 1, 1, 1, 1, 1, 1, 1, 12, 12, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 2],
-        [2, 0, 0, 10, 0, 0, 0, 0, 0, 10, 0, 0, 2, 1, 1, 1, 1, 1, 1, 1, 12, 12, 1, 1, 1, 1, 12, 12, 1, 1, 1, 1, 1, 1, 2],
-        [2, 0, 0, 10, 0, 0, 0, 0, 0, 10, 0, 0, 2, 1, 12, 12, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 12, 12, 1, 1, 1, 1, 1, 1, 2],
-        [2, 0, 0, 0, 0, 0, 10, 0, 0, 0, 0, 0, 2, 1, 12, 12, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 2],
-        [2, 0, 0, 0, 0, 10, 0, 10, 0, 0, 0, 0, 2, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 2],
-        [2, 0, 0, 0, 10, 0, 0, 0, 10, 0, 0, 0, 2, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 2],
-        [2, 0, 0, 10, 0, 0, 0, 0, 0, 10, 0, 0, 2, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 2],
-        [2, 0, 0, 10, 10, 10, 10, 10, 10, 10, 0, 0, 2, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 2],
-        [2, 0, 0, 10, 0, 0, 0, 0, 0, 10, 0, 0, 2, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 12, 12, 1, 1, 1, 1, 1, 1, 1, 2],
-        [2, 0, 0, 10, 0, 0, 0, 0, 0, 10, 0, 0, 2, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 12, 12, 1, 1, 1, 1, 1, 1, 1, 2],
-        [2, 0, 0, 10, 0, 0, 0, 0, 0, 10, 0, 0, 2, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 2],
-        [2, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 2, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 2],
-        [2, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 2, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 2],
-        [2, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 2],
-        [2, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 2],
-        [2, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 12, 12, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 2],
-        [2, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 12, 12, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 2],
-        [2, 5, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 2],
+        [2, 2, 2, 2, 11, 11, 11, 11, 11, 2, 2, 2, 2, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1],
+        [2, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 2, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1],
+        [2, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 2, 1, 1, 1, 1, 1, 1, 1, 1, 1, 12, 12, 1, 1, 1, 1, 1, 1, 1, 12, 12, 1, 1],
+        [2, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 2, 1, 1, 1, 1, 1, 1, 1, 1, 1, 12, 12, 1, 1, 1, 1, 1, 1, 1, 12, 12, 1, 1],
+        [2, 0, 0, 10, 10, 0, 0, 0, 10, 10, 0, 0, 2, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1],
+        [2, 0, 0, 10, 0, 10, 0, 10, 0, 10, 0, 0, 2, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1],
+        [2, 0, 0, 10, 0, 0, 10, 0, 0, 10, 0, 0, 2, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1],
+        [2, 0, 0, 10, 0, 0, 0, 0, 0, 10, 0, 0, 2, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1],
+        [2, 0, 0, 10, 0, 0, 0, 0, 0, 10, 0, 0, 2, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1],
+        [2, 0, 0, 10, 0, 0, 0, 0, 0, 10, 0, 0, 2, 1, 1, 1, 1, 1, 1, 1, 12, 12, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1],
+        [2, 0, 0, 10, 0, 0, 0, 0, 0, 10, 0, 0, 2, 1, 1, 1, 1, 1, 1, 1, 12, 12, 1, 1, 1, 1, 12, 12, 1, 1, 1, 1, 1, 1, 1],
+        [2, 0, 0, 10, 0, 0, 0, 0, 0, 10, 0, 0, 2, 1, 12, 12, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 12, 12, 1, 1, 1, 1, 1, 1, 1],
+        [2, 0, 0, 0, 0, 0, 10, 0, 0, 0, 0, 0, 2, 1, 12, 12, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1],
+        [2, 0, 0, 0, 0, 10, 0, 10, 0, 0, 0, 0, 2, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1],
+        [2, 0, 0, 0, 10, 0, 0, 0, 10, 0, 0, 0, 2, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1],
+        [2, 0, 0, 10, 0, 0, 0, 0, 0, 10, 0, 0, 2, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1],
+        [2, 0, 0, 10, 10, 10, 10, 10, 10, 10, 0, 0, 2, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1],
+        [2, 0, 0, 10, 0, 0, 0, 0, 0, 10, 0, 0, 2, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 12, 12, 1, 1, 1, 1, 1, 1, 1, 1],
+        [2, 0, 0, 10, 0, 0, 0, 0, 0, 10, 0, 0, 2, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 12, 12, 1, 1, 1, 1, 1, 1, 1, 1],
+        [2, 0, 0, 10, 0, 0, 0, 0, 0, 10, 0, 0, 2, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1],
+        [2, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 2, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1],
+        [2, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 2, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1],
+        [2, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1],
+        [2, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1],
+        [2, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 12, 12, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1],
+        [2, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 12, 12, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1],
+        [2, 5, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1],
         [2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2]
     ],
 
@@ -425,7 +448,7 @@ var mapthree = {
 
     scripts: {
         change_colour: 'game.player.colour = "#"+(Math.random()*0xFFFFFF<<0).toString(16);',
-        next_level: 'mapselect.player.x = 14;mapselect.player.y = 7;game.load_map(mapselect);mapselect.keys[6].colour = "#ddd";mapselect.keys[6].script = " ";document.getElementById("listofgames4").style.display = "block";document.getElementById("displayLevel").innerHTML = "Level 1/4: Dark Forest"',
+        next_level: 'document.getElementById("victory_sound").play();mapselect.player.x = 14;mapselect.player.y = 7;game.load_map(mapselect);mapselect.keys[6].colour = "#ddd";mapselect.keys[6].script = " ";document.getElementById("listofgames4").style.display = "block";document.getElementById("displayLevel").innerHTML = "Level 1/4: Dark Forest"',
         death: 'document.getElementById("game_over_sound").play();game.load_map(mapthree);document.getElementById("energy").value -= 1',
     }
 };
