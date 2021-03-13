@@ -19,14 +19,17 @@
             }
             canvas {
                 display:block;
-                margin: 40px auto 20px;
-                margin-left:20%;
                 border: 1px solid #333;
                 border-left: none;
                 box-shadow: 0 0 16px 2px rgba(0,0,0,0.8);
                 float: left;
+                height: 400px;
+                width: 400px;
+                background-image: url('Images/ma.png');
+                background-size: cover;
+                z-index: 8;
             }
-            div {
+            div.scores {
             	height: 400px;
             	float:left;
                 margin: 40px auto 20px;
@@ -42,11 +45,38 @@
             p {
             	clear:left;
             } 
+            .play {
+            	z-index: 99;
+            	height:45px;
+            	cursor:pointer;
+            	border-radius:5px;
+            	font-size:25px;
+            	width:100px;
+                position: absolute;
+                top: 60%;
+                margin-left:38%;
+                background-color:#34bdff;
+            }
+            .container {
+                display:block;
+                margin: 40px auto 20px;
+                margin-left:20%;
+                border: 1px solid #333;
+                border-left: none;
+                box-shadow: 0 0 16px 2px rgba(0,0,0,0.8);
+                float: left;
+                height: 400px;
+                width: 400px;
+                position:relative;
+            }
 		</style>
 	</head>
-	<body onload="runGame()">
-		<canvas id="canvas" autofocus>MADEFENDERS NOT WORKING =(</canvas>
-		<div style="display:block;" id="menu">
+	<body>
+		<div class="container">
+			<button onclick="runGame()" class="play" id="playb">Play</button>
+		    <canvas id="canvas" autofocus>MADEFENDERS NOT WORKING =(</canvas>
+		</div>
+		<div style="display:block;" id="menu" class="scores">
 			<br>Energy:&nbsp;&nbsp;<meter max="10" min="0" value="6" low="4" style="width:150px;" id="energy" optimum="10">/10</meter><br>
 			<br><h1>MaDefenders</h1>
 			<h1 id="displayLevel">Level 1/1: Ma HQ</h1>

@@ -1043,6 +1043,9 @@ window.requestAnimFrame =
 var canvas = document.getElementById('canvas'),
     ctx = canvas.getContext('2d');
 
+document.getElementById("playb").style.display = "none";
+canvas.style.backgroundImage = "none";
+canvas.style.backgroundColor = "#444";
 canvas.width = 400;
 canvas.height = 400;
 
