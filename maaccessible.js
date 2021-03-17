@@ -4,7 +4,7 @@
 
 |‾\     /‾|      /‾\
 |  \   /  |     / _ \     _____________
-| \ \_/ / |    / /_\ \    | DEFENDERS |    
+| \ \_/ / |    / /_\ \    | DEFENDERS |   ACCESSIBLE    
 | |\___/| |   /  ___  \   ‾‾‾‾‾‾‾‾‾‾‾‾‾
 | |     | |  / /     \ \
 |_|     |_| /_/       \_\  
@@ -13,6 +13,7 @@ Original Engine Copyright (c) 2013 dissimulate at Codepen (codepen.io)
 Story Jomun Rights NoCopy Tomo Technology Four
 Game/Level Design Jomun Rights NoCopy Jomuneziun A Technology Games
 The pronounciation of 'Ma' is 'Mah' and 't'Honza' is 'Honza'
+THIS IS THE ACCESSIBLE VERSION. FOR THE ORIGINAL, PLEASE SEE MADEFENDERS.JS
 
 Permission is hereby granted, free of charge, to any person obtaining a copy
 of this software and associated documentation files (the "Software"), to deal
@@ -42,13 +43,7 @@ heading out into the Desert and beyond... Can you save The Ma from Evilz? No-one
 
 */
 
-function runGame () {
-
-var colourvar1;
-
-function testingc() {
-	colourvar1 = "red"
-}
+function runAGame () {
 
 /*CHECK ENERGY 0*/
 
@@ -63,7 +58,7 @@ setInterval(function(){
 
 var map = {
 
-    tile_size: 18,
+    tile_size: 28,
 
     /*
     
@@ -83,24 +78,24 @@ var map = {
     
     keys: [
         {id: 0, colour: '#444', solid: 0}, //bg
-        {id: 1, colour: 'lightblue', solid: 0}, //air
-        {id: 2,colour: '#813319',solid: 1,bounce: 0.35}, //brick 
+        {id: 1, colour: '#222', solid: 0}, //air
+        {id: 2,colour: '#b29374',solid: 1,bounce: 0.35}, //brick 
         {id: 3,colour: '#0077BE',friction: {x: 0.9,y: 0.9},gravity: {x: 0,y: 0.1},jump: 1,fore: 1}, //water
-        {id: 4,colour: '#C0C0C0'}, //elevator inside
+        {id: 4,colour: '#444'}, //elevator inside
         {id: 5,colour: '#007600',solid: 1,bounce: 1.1}, //tree
         {id: 6,colour: 'purple',solid: 1,bounce: 0}, //landings
         {id: 7,colour: '#807153',solid: 0}, //trunk
         {id: 8,colour: '#FADF73',solid: 0,script: 'next_level'}, //goal
         {id: 9,colour: '#C93232',solid: 0,script: 'death'}, //lava
-        {id: 10,colour: '#813319',solid: 1}, //closed vent
-        {id: 11,colour: 'lightblue',solid: 0,script: 'unlock'}, //unlock vent
+        {id: 10,colour: '#b29374',solid: 1}, //closed vent
+        {id: 11,colour: '#222',solid: 0,script: 'unlock'}, //unlock vent
         {id: 12,colour: '#44A6C6',solid: 0}, //decor block
-        {id: 13,colour: 'lightblue',solid: 0,script: 'death'}, //void
-        {id: 14,colour: 'lightblue',solid: 0,script: 'lock'}, //lock vent
+        {id: 13,colour: '#222',solid: 0,script: 'death'}, //void
+        {id: 14,colour: '#222',solid: 0,script: 'lock'}, //lock vent
         {id: 15,colour: '#E7F527',solid: 0,script: 'energybar'}, //popcake
         {id: 16,colour: '#E7F527',solid: 0,script: 'energybarthesecond'}, //popcake
-        {id: 17,colour: '#C0C0C0',solid: 0,script: 'goUp'}, //elevator
-        {id: 18,colour: '#C0C0C0',solid: 0,script: 'stopLifter'} //elevator stop
+        {id: 17,colour: '#444',solid: 0,script: 'goUp'}, //elevator
+        {id: 18,colour: '#444',solid: 0,script: 'stopLifter'} //elevator stop
     ],
     
     /*DATA*/
@@ -188,9 +183,9 @@ var map = {
     /*MOVEMENT SPEED*/
     
     movement_speed: {
-        jump: 7,
-        left: 0.5,
-        right: 0.5
+        jump: 8.5,
+        left: 10.9,
+        right: 10.9
     },
     
     /*PLAYER DATA*/
@@ -198,7 +193,7 @@ var map = {
     player: {
         x: 6,
         y: 2,
-        colour: '#34bdff'
+        colour: 'YELLOW'
     },
     
     /*SCRIPTS*/
@@ -207,8 +202,8 @@ var map = {
         change_colour: 'game.player.colour = "#"+(Math.random()*0xFFFFFF<<0).toString(16);',
         next_level: 'document.getElementById("victory_sound").play();mapselect.player.x = 7;mapselect.player.y = 6;game.load_map(mapselect);mapselect.keys[4].colour = "#ddd";mapselect.keys[4].script = " ";document.getElementById("listofgames2").style.display = "block";document.getElementById("displayLevel").innerHTML = "Level 1/2: Ma Pyramid"',
         death: 'document.getElementById("game_over_sound").play();game.load_map(map);game.current_map.keys[10].solid = 1;game.current_map.keys[10].colour = "#813319";document.getElementById("energy").value -= 1',
-        unlock: 'game.current_map.keys[10].solid = 0;game.current_map.keys[10].colour = "#555";',
-        lock: 'game.current_map.keys[10].solid = 1;game.current_map.keys[10].colour = "#813319";',
+        unlock: 'game.current_map.keys[10].solid = 0;game.current_map.keys[10].colour = "#222";',
+        lock: 'game.current_map.keys[10].solid = 1;game.current_map.keys[10].colour = "brown";',
         energybar: 'map.player.x = 34;map.player.y = 14;document.getElementById("ding").play();document.getElementById("energy").value += 1;game.current_map.keys[15].script = " ";game.current_map.keys[15].colour = "#999"',
         energybarthesecond: 'map.player.x = 20;map.player.y = 50;document.getElementById("energy").value += 1;game.current_map.keys[16].script = " ";game.current_map.keys[16].colour = "#999";document.getElementById("ding").play()',
         goUp: 'game.current_map.keys[4].gravity = {x:1,y:-0.005};game.current_map.keys[1].gravity = {x:1,y:-0.005}',
@@ -221,7 +216,7 @@ var map = {
 
 var maptwo = {
 
-    tile_size: 18,
+    tile_size: 28,
     
     keys: [
         {id: 0, colour: '#444', solid: 0}, //bg
@@ -369,7 +364,7 @@ var maptwo = {
 
 var mapthree = {
 
-    tile_size: 18,
+    tile_size: 28,
     
     keys: [
         {id: 0,colour: 'lightblue',solid: 0},//air
@@ -468,13 +463,13 @@ var mapthree = {
 
 var mapselect = {
 
-    tile_size: 18,
+    tile_size: 28,
     
     keys: [
-        {id: 0,colour: '#555',solid: 0}, //nothing
-        {id: 1,colour: '#ccc',solid: 0},//air
+        {id: 0,colour: '#fff',solid: 0}, //nothing
+        {id: 1,colour: '#fff',solid: 0},//air
         {id: 2,colour: 'green',solid: 1}, //brick
-        {id: 3,colour: '#ccc',solid: 1}, //start
+        {id: 3,colour: '#fff',solid: 1}, //start
         {id: 4,colour: '#813319',solid: 0,script: 'lvlone'}, //lvl1
         {id: 5,colour: '#EDA255',solid: 0,script: 'lvltwo'}, //lvl2
         {id: 6,colour: '#E95770',solid: 0,script: 'lvlthree'}, //lvl3
@@ -485,7 +480,7 @@ var mapselect = {
         {id: 11,colour: 'green',solid: 1}, //magic block
         {id: 12,colour: '#040',solid: 1}, //forest
         {id: 13,colour: 'purple',solid: 0,script: 'warp'}, //warp zone
-        {id: 14,colour: '#ccc',solid: 0}, //magic closing path
+        {id: 14,colour: '#fff',solid: 0}, //magic closing path
         {id: 15,colour: 'yellow',solid: 0,script: 'wz'}, //wz
         {id: 16,colour: '#4ec474',solid: 0,script: 'lvlfive'}, //lvl5
         {id: 17,colour: '#B93232',solid: 0,script: 'lvlsix'}, //lvl6
@@ -541,7 +536,7 @@ var mapselect = {
     /*MOVEMENT SPEED*/
     
     movement_speed: {
-        jump: 7,
+        jump: 10,
         left: 0.5,
         right: 0.5
     },
@@ -551,7 +546,7 @@ var mapselect = {
     player: {
         x: 5,
         y: 1,
-        colour: '#24bdff'
+        colour: 'red'
     },
     
     /*SCRIPTS*/
@@ -1012,8 +1007,8 @@ Clarity.prototype.draw_player = function (context) {
     context.beginPath();
 
     context.arc(
-        this.player.loc.x + 18 / 2 - this.camera.x,
-        this.player.loc.y + 15 - this.camera.y,
+        this.player.loc.x + 28 / 2 - this.camera.x,
+        this.player.loc.y + 23 - this.camera.y,
         this.tile_size / 2,
         0.9*Math.PI,
         0.1*Math.PI

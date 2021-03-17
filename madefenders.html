@@ -57,6 +57,18 @@
                 margin-left:38%;
                 background-color:#34bdff;
             }
+            #playb2 {
+            	z-index: 99;
+            	height:45px;
+            	cursor:pointer;
+            	border-radius:5px;
+            	font-size:25px;
+            	width:175px;
+                position: absolute;
+                top: 75%;
+                margin-left:29%;
+                background-color:red;
+            }
             .container {
                 display:block;
                 margin: 40px auto 20px;
@@ -74,11 +86,13 @@
 	<body>
 		<div class="container">
 			<button onclick="runGame()" class="play" id="playb">Play</button>
+			<button onclick="runAGame()"id="playb2">Accessible Mode</button>
 		    <canvas id="canvas" autofocus>MADEFENDERS NOT WORKING =(</canvas>
 		</div>
 		<div style="display:block;" id="menu" class="scores">
 			<br>Energy:&nbsp;&nbsp;<meter max="10" min="0" value="6" low="4" style="width:150px;" id="energy" optimum="10">/10</meter><br>
 			<br><h1>MaDefenders</h1>
+			<button onclick="testingc()">a</button>
 			<h1 id="displayLevel">Level 1/1: Ma HQ</h1>
 			<br><h2>Unlocked levels:</h2>
 			<br><h3 id="listofgames1">Level 1</h3>
@@ -106,5 +120,6 @@
         </audio>
 	    <p align="center"><sub>Engine Copyright &copy; 2013 dissimulate at Codepen <sup>{JR}</sup> Name and Level design 2021 ME <sup>{JR}</sup> Jomunatech 2019 ME</sub></p>
 		<script src="madefenders.js"></script>
+		<script src="maaccessible.js"></script>
 	</body>
 </html>
