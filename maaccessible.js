@@ -3,9 +3,9 @@
     TTFOUR AND JATGAMES PRESENT
 
 |‾\     /‾|      /‾\
-|  \   /  |     / _ \     _____________
-| \ \_/ / |    / /_\ \    | DEFENDERS |   ACCESSIBLE    
-| |\___/| |   /  ___  \   ‾‾‾‾‾‾‾‾‾‾‾‾‾
+|  \   /  |     / _ \     ________________________
+| \ \_/ / |    / /_\ \    | DEFENDERS ACCESSIBLE! |    
+| |\___/| |   /  ___  \   ‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾
 | |     | |  / /     \ \
 |_|     |_| /_/       \_\  
 
@@ -13,6 +13,7 @@ Original Engine Copyright (c) 2013 dissimulate at Codepen (codepen.io)
 Story Jomun Rights NoCopy Tomo Technology Four
 Game/Level Design Jomun Rights NoCopy Jomuneziun A Technology Games
 The pronounciation of 'Ma' is 'Mah' and 't'Honza' is 'Honza'
+
 THIS IS THE ACCESSIBLE VERSION. FOR THE ORIGINAL, PLEASE SEE MADEFENDERS.JS
 
 Permission is hereby granted, free of charge, to any person obtaining a copy
@@ -183,9 +184,9 @@ var map = {
     /*MOVEMENT SPEED*/
     
     movement_speed: {
-        jump: 8.5,
-        left: 10.9,
-        right: 10.9
+        jump: 7,
+        left: 0.5,
+        right: 0.5
     },
     
     /*PLAYER DATA*/
@@ -220,7 +221,7 @@ var maptwo = {
     
     keys: [
         {id: 0, colour: '#444', solid: 0}, //bg
-        {id: 1, colour: 'lightblue', solid: 0}, //air
+        {id: 1, colour: '#222', solid: 0}, //air
         {id: 2,colour: '#EDA255',solid: 1,bounce: 0.35}, //brick 
         {id: 3,colour: '#555',solid: 0}, //inside pyramid
         {id: 4,colour: '#555',script: 'lavabanish'}, //nolava
@@ -230,11 +231,11 @@ var maptwo = {
         {id: 8,colour: '#FADF73',solid: 0,script: 'next_level'}, //goal
         {id: 9,colour: '#C93232',solid: 0,script: 'death'}, //lava
         {id: 10,colour: '#EDA255',solid: 1}, //closed vent
-        {id: 11,colour: 'lightblue',solid: 0,script: 'unlock'}, //unlock vent
+        {id: 11,colour: '#222',solid: 0,script: 'unlock'}, //unlock vent
         {id: 12,colour: '#44A6C6',solid: 0}, //decor block
-        {id: 13,colour: 'lightblue',solid: 0}, //capstone
-        {id: 14,colour: 'lightblue',solid: 0,script: 'lock'}, //lock vent
-        {id: 15,colour: 'lightblue',solid: 1}, //end
+        {id: 13,colour: '#222',solid: 0}, //capstone
+        {id: 14,colour: '#222',solid: 0,script: 'lock'}, //lock vent
+        {id: 15,colour: '#222',solid: 1}, //end
         {id: 16,colour: '#EDA255',solid: 1}, //capstone2
         {id: 17,colour: '#0077BE',friction: {x: 0.9,y: 0.9},gravity: {x: 0,y: 0.1},jump: 1,fore: 1}, //water
         {id: 18,colour: '#0000B3',solid: 1}, //solid decor
@@ -332,7 +333,7 @@ var maptwo = {
     /*MOVEMENT SPEED*/
     
     movement_speed: {
-        jump: 7,
+        jump: 8,
         left: 0.5,
         right: 0.5
     },
@@ -342,7 +343,7 @@ var maptwo = {
     player: {
         x: 6,
         y: 2,
-        colour: '#24BDFF'
+        colour: 'yellow'
     },
     
     /*SCRIPTS*/
@@ -353,7 +354,7 @@ var maptwo = {
         death: 'document.getElementById("game_over_sound").play();game.load_map(maptwo);document.getElementById("energy").value -= 1',
         unlock: 'game.current_map.keys[10].solid = 0;game.current_map.keys[10].colour = "#555";game.current_map.keys[13].solid = 1;game.current_map.keys[13].colour = "#EDA255";game.current_map.keys[7].colour = "#555";game.current_map.keys[16].solid = 0;game.current_map.keys[16].colour = "#555"',
         lock: 'game.current_map.keys[10].solid = 1;game.current_map.keys[10].colour = "#EDA255";',
-        secondlock: 'game.current_map.keys[13].solid = 0;game.current_map.keys[13].colour = "lightblue";game.current_map.keys[16].solid = 1;game.current_map.keys[16].colour = "#EDA255"',
+        secondlock: 'game.current_map.keys[13].solid = 0;game.current_map.keys[13].colour = "#222";game.current_map.keys[16].solid = 1;game.current_map.keys[16].colour = "#EDA255"',
         lavabanish: 'game.current_map.keys[9].script = " ";game.current_map.keys[9].colour = "#EDA255";game.current_map.keys[9].solid = 1',
         energybar: 'maptwo.player.x = 29;maptwo.player.y = 40;document.getElementById("energy").value += 1;game.current_map.keys[20].script = " ";game.current_map.keys[20].colour = "#999";document.getElementById("ding").play()',
         energybarthesecond: 'maptwo.player.x = 18;maptwo.player.y = 55;document.getElementById("energy").value += 1;game.current_map.keys[21].script = " ";game.current_map.keys[21].colour = "#999";document.getElementById("ding").play()'
@@ -367,7 +368,7 @@ var mapthree = {
     tile_size: 28,
     
     keys: [
-        {id: 0,colour: 'lightblue',solid: 0},//air
+        {id: 0,colour: '#222',solid: 0},//air
         {id: 1,colour: '#0077BE',friction: {x: 0.9,y: 0.9},gravity: {x: 0,y: 0.1},jump: 1,fore: 1},//water
         {id: 2,colour: '#E95770',solid: 1,bounce: 0.35}, //brick 
         {id: 3,colour: '#007600',solid: 1,bounce: 1.1}, //tree
@@ -375,8 +376,8 @@ var mapthree = {
         {id: 5,colour: '#FADF73',solid: 0,script: 'next_level'}, //goal
         {id: 6,colour: '#C93232',solid: 0,script: 'death'}, //lava
         {id: 7,colour: '#fff',solid: 1}, //closed vent
-        {id: 8,colour: 'lightblue',solid: 0,script: 'unlock'}, //unlock vent
-        {id: 9,colour: 'lightblue',solid: 0,script: 'lock'}, //lock vent
+        {id: 8,colour: '#222',solid: 0,script: 'unlock'}, //unlock vent
+        {id: 9,colour: '#222',solid: 0,script: 'lock'}, //lock vent
         {id: 10,colour: '#44A6C6',solid: 0}, //decor block
         {id: 11,colour: '#555',solid: 0}, //decor block
         {id: 12,colour: 'purple',solid: 0,script: 'death'}, //thingy
@@ -446,7 +447,7 @@ var mapthree = {
     player: {
         x: 6,
         y: 2,
-        colour: '#24BDFF'
+        colour: 'yellow'
     },
     
     /*SCRIPTS*/
