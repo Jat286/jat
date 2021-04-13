@@ -1,12 +1,13 @@
 <!DOCTYPE html>
 <html lang="en-GB">
     <head>
+      	<title>JatStore | Browse things!</title>
         <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <meta name="keywords" content="Jat, Jomunatech, Johtifications">
         <meta name="description" content="The Official Jat Website">
         <meta name="author" content="ME">
-        <link rel="stylesheet" type="text/css" href="asheetofstyles.css" />
+        <link rel="stylesheet" type="text/css" href="../asheetofstyles.css" />
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" />  
         <link rel="stylesheet" href="https://unpkg.com/flickity@2/dist/flickity.min.css">
         <link rel="shortcut icon" href="Images/jatlogo2.ico" type="image/x-icon" />
@@ -14,6 +15,32 @@
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
         <script src="https://unpkg.com/flickity@2/dist/flickity.pkgd.min.js"></script>
     </head>
-    <body>
-    	
+    <body data-starData="body-">
+    	<div id="toolbar">
+    		<div class="dropdown">
+                <button class="dropbtn" style="font-size:30px;padding-right:8px;">&#8801;</button>
+                <div class="dropdown-content">
+                    <a href="#">Jat Home&nbsp;<i class="fa fa-home" > </i></a>
+                    <a href="../index.html">JatPro&nbsp;<i class="fa fa-smile-o" > </i><br>(Log In)</a>
+                    <a href="#">JatCloud&nbsp;<i id="div1" class="fa"> </i><br>(Log In)</a>
+                    <a href="../shop/products.html">JatStore&nbsp;<i class="fa fa-shopping-bag" > </i></a>
+                    <a href="../madefenders.html">MaDefenders</a>
+               </div>
+            </div>
+    	    <a class="a" href="../index.html">Back to Homepage</a>
+    	    <a class="asmall" href="../index.html" data-starData="a2"><br>Log Out</a>
+    	    <script>
+                function openfolder() {
+                  var a;
+                  a = document.getElementById("div1");
+                  a.innerHTML = "&#xf114;";
+                  setTimeout(function () {
+                    a.innerHTML = "&#xf115;";
+                  }, 500);
+                }
+                openfolder();
+                setInterval(openfolder, 1000);
+            </script>
+    	</div>
+    	<br><h1 data-starData="h1-1" style="width:600px;">JatStore - Products</h1>
     </body>
