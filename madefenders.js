@@ -96,7 +96,11 @@ var map = {
         {id: 15,colour: '#E7F527',solid: 0,script: 'energybar'}, //popcake
         {id: 16,colour: '#E7F527',solid: 0,script: 'energybarthesecond'}, //popcake
         {id: 17,colour: '#C0C0C0',solid: 0,script: 'goUp'}, //elevator
-        {id: 18,colour: '#C0C0C0',solid: 0,script: 'stopLifter'} //elevator stop
+        {id: 18,colour: '#C0C0C0',solid: 0,script: 'stopLifter'}, //elevator stop
+        {id: 19,colour: '#C0C0C0',solid: 0,script: 'moveblock'}, //movestop
+        {id: 20,colour: '#c0c0c0',solid: 0}, //1
+        {id: 21,colour: 'lightblue',solid: 0}, //2
+        {id: 22,colour: 'lightblue',solid: 0}, //3
     ],
     
     /*DATA*/
@@ -125,12 +129,12 @@ var map = {
         [2, 1, 1, 12, 1, 1, 1, 1, 1, 12, 1, 1, 2, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 2, 2, 2, 4, 2, 10, 2],
         [2, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 2, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 2, 2, 2, 4, 2, 10, 2],
         [2, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 2, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 2, 2, 2, 4, 2, 10, 2],
+        [2, 1, 1, 1, 1, 20, 1, 1, 1, 1, 1, 1, 2, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 2, 2, 2, 4, 2, 10, 2],
         [2, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 2, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 2, 2, 2, 4, 2, 10, 2],
         [2, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 2, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 2, 2, 2, 4, 2, 10, 2],
         [2, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 2, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 2, 2, 2, 4, 2, 10, 2],
         [2, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 2, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 2, 2, 2, 4, 2, 10, 2],
-        [2, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 2, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 2, 2, 2, 4, 2, 10, 2],
-        [2, 8, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 2, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 2, 2, 2, 4, 2, 10, 2],
+        [2, 8, 19, 1, 1, 1, 1, 1, 1, 1, 1, 1, 2, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 2, 2, 2, 4, 2, 10, 2],
         [2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 1, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 4, 2, 10, 2],
         [2, 1, 1, 1, 1, 1, 1, 1, 1, 1, 2, 1, 2, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 2, 2, 2, 4, 2, 10, 2],
         [2, 1, 1, 1, 1, 1, 1, 1, 1, 1, 2, 1, 2, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 2, 2, 2, 4, 2, 10, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2],
@@ -208,7 +212,8 @@ var map = {
         energybar: 'map.player.x = 34;map.player.y = 14;document.getElementById("ding").play();document.getElementById("energy").value += 1;game.current_map.keys[15].script = " ";game.current_map.keys[15].colour = "#999"',
         energybarthesecond: 'map.player.x = 20;map.player.y = 50;document.getElementById("energy").value += 1;game.current_map.keys[16].script = " ";game.current_map.keys[16].colour = "#999";document.getElementById("ding").play()',
         goUp: 'game.current_map.keys[4].gravity = {x:1,y:-0.005};game.current_map.keys[1].gravity = {x:1,y:-0.005}',
-        stopLifter: 'game.current_map.keys[4].gravity = {x:0,y:0.3};game.current_map.keys[1].gravity = {x:0,y:0.3}'
+        stopLifter: 'game.current_map.keys[4].gravity = {x:0,y:0.3};game.current_map.keys[1].gravity = {x:0,y:0.3}',
+        moveblock: ''
     }
     
 };
