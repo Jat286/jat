@@ -83,8 +83,13 @@
                 position:relative;
             }
 		</style>
+		<script>
+		    function notice() {
+		    	alert("New Level Data + Easter Egg!");
+		    }
+		</script>
 	</head>
-	<body>
+	<body onload="notice()">
 		<div class="container">
 			<button onclick="runGame()" class="play" id="playb">Play</button>
 			<button onclick="runAGame()"id="playb2">Accessible Mode</button>
