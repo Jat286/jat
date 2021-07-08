@@ -1047,6 +1047,7 @@ var canvas = document.getElementById('canvas'),
 
 document.getElementById("playb").style.display = "none";
 document.getElementById("playb2").style.display = "none";
+document.getElementById("playb3").style.display = "none";
 canvas.style.backgroundImage = "none";
 canvas.style.backgroundColor = "#444";
 canvas.width = 400;

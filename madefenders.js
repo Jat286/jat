@@ -207,7 +207,7 @@ var map = {
 
     scripts: {
         change_colour: 'game.player.colour = "#"+(Math.random()*0xFFFFFF<<0).toString(16);',
-        next_level: 'document.getElementById("victory_sound").play();mapselect.player.x = 7;mapselect.player.y = 6;game.load_map(mapselect);mapselect.keys[4].colour = "#ddd";mapselect.keys[4].script = " ";document.getElementById("listofgames2").style.display = "block";document.getElementById("displayLevel").innerHTML = "Level 1/2: Ma Pyramid"',
+        next_level: 'document.getElementById("victory_sound").play();mapselect.player.x = 7;mapselect.player.y = 6;game.load_map(mapselect);mapselect.keys[4].colour = "#ddd";mapselect.keys[4].script = " ";document.getElementById("listofgames2").style.display = "block";document.getElementById("displayLevel").innerHTML = "Level 1|2: Ma Pyramid"',
         death: 'document.getElementById("game_over_sound").play();game.load_map(map);game.current_map.keys[10].solid = 1;game.current_map.keys[10].colour = "#813319";document.getElementById("energy").value -= 1',
         unlock: 'game.current_map.keys[10].solid = 0;game.current_map.keys[10].colour = "#555";',
         lock: 'game.current_map.keys[10].solid = 1;game.current_map.keys[10].colour = "#813319";',
@@ -357,7 +357,7 @@ var maptwo = {
 
     scripts: {
         change_colour: 'game.player.colour = "#"+(Math.random()*0xFFFFFF<<0).toString(16);',
-        next_level: 'document.getElementById("victory_sound").play();mapselect.player.x = 12;mapselect.player.y = 4;game.load_map(mapselect);mapselect.keys[5].colour = "#ddd";mapselect.keys[5].script = " ";document.getElementById("listofgames3").style.display = "block";document.getElementById("displayLevel").innerHTML = "Level 1/3: Hæfy`lm Maze"',
+        next_level: 'document.getElementById("victory_sound").play();mapselect.player.x = 12;mapselect.player.y = 4;game.load_map(mapselect);mapselect.keys[5].colour = "#ddd";mapselect.keys[5].script = " ";document.getElementById("listofgames3").style.display = "block";document.getElementById("displayLevel").innerHTML = "Level 1|3: Hify`lm Maze"',
         death: 'document.getElementById("game_over_sound").play();game.load_map(maptwo);document.getElementById("energy").value -= 1',
         unlock: 'game.current_map.keys[10].solid = 0;game.current_map.keys[10].colour = "#555";game.current_map.keys[13].solid = 1;game.current_map.keys[13].colour = "#EDA255";game.current_map.keys[7].colour = "#555";game.current_map.keys[16].solid = 0;game.current_map.keys[16].colour = "#555"',
         lock: 'game.current_map.keys[10].solid = 1;game.current_map.keys[10].colour = "#EDA255";',
@@ -463,7 +463,7 @@ var mapthree = {
 
     scripts: {
         change_colour: 'game.player.colour = "#"+(Math.random()*0xFFFFFF<<0).toString(16);',
-        next_level: 'document.getElementById("victory_sound").play();mapselect.player.x = 14;mapselect.player.y = 7;game.load_map(mapselect);mapselect.keys[6].colour = "#ddd";mapselect.keys[6].script = " ";document.getElementById("listofgames4").style.display = "block";document.getElementById("displayLevel").innerHTML = "Level 1/4: Dark Forest"',
+        next_level: 'document.getElementById("victory_sound").play();mapselect.player.x = 14;mapselect.player.y = 7;game.load_map(mapselect);mapselect.keys[6].colour = "#ddd";mapselect.keys[6].script = " ";document.getElementById("listofgames4").style.display = "block";document.getElementById("displayLevel").innerHTML = "Level 1|4: Dark Forest"',
         death: 'document.getElementById("game_over_sound").play();game.load_map(mapthree);document.getElementById("energy").value -= 1;mapthree.keys[13].colour = "#0077BE";mapthree.keys[15].colour = "#0077BE";mapthree.keys[16].colour = "#0077BE";mapthree.keys[13].solid = 0;mapthree.keys[15].solid = 0;mapthree.keys[16].solid = 0;',
         bad: 'game.current_map.keys[15].colour = "#E95770";game.current_map.keys[15].solid = 1;game.current_map.keys[16].colour = "purple";game.current_map.keys[16].script = "death"',
         energybar: 'mapthree.player.x = 62;mapthree.player.y = 10;document.getElementById("energy").value += 1;game.current_map.keys[6].script = " ";game.current_map.keys[6].colour = "#999";document.getElementById("ding").play()',
@@ -621,7 +621,7 @@ var mapfour = {
 
     scripts: {
         change_colour: 'game.player.colour = "#"+(Math.random()*0xFFFFFF<<0).toString(16);',
-        next_level: 'document.getElementById("victory_sound").play();mapselect.player.x = 12;mapselect.player.y = 11;game.load_map(mapselect);mapselect.keys[10].colour = "#ddd";mapselect.keys[10].script = " ";document.getElementById("listofgames4").style.display = "block";document.getElementById("displayLevel").innerHTML = "Level 1/5: T`Honzan Clouds"',
+        next_level: 'document.getElementById("victory_sound").play();mapselect.player.x = 12;mapselect.player.y = 11;game.load_map(mapselect);mapselect.keys[10].colour = "#ddd";mapselect.keys[10].script = " ";document.getElementById("listofgames4").style.display = "block";document.getElementById("displayLevel").innerHTML = "Level 1|5: T`Honzan Clouds"',
         death: 'document.getElementById("game_over_sound").play();game.load_map(map);game.current_map.keys[10].solid = 1;game.current_map.keys[10].colour = "#813319";document.getElementById("energy").value -= 1',
         unlock: 'game.current_map.keys[10].solid = 0;game.current_map.keys[10].colour = "#555";',
         lock: 'game.current_map.keys[10].solid = 1;game.current_map.keys[10].colour = "#813319";',
@@ -1304,6 +1304,7 @@ var canvas = document.getElementById('canvas'),
 
 document.getElementById("playb").style.display = "none";
 document.getElementById("playb2").style.display = "none";
+document.getElementById("playb3").style.display = "none";
 canvas.style.backgroundImage = "none";
 canvas.style.backgroundColor = "#444";
 canvas.width = 400;
