@@ -425,7 +425,7 @@ var mapthree = {
         [2, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 2, 1, 1, 2, 1, 1, 1, 1, 1, 1, 1, 1, 12, 12, 1, 1, 2, 1, 1, 2, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 2],
         [2, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 12, 12, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 2, 1, 1, 2, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 2, 1, 1, 2, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 2],
         [2, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 12, 12, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 2, 1, 1, 2, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 2, 1, 1, 2, 1, 1, 1, 1, 1, 1, 1, 1, 2, 1, 1, 1, 2],
-        [2, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 2, 1, 1, 2, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 2, 1, 1, 2, 1, 1, 1, 1, 1, 1, 1, 1, 2, 8, 8, 8, 2],
+        [2, 5, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 2, 1, 1, 2, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 2, 1, 1, 2, 1, 1, 1, 1, 1, 1, 1, 1, 2, 8, 8, 8, 2],
         [2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 7, 7, 7, 2],
         [2, 12, 12, 1, 1, 1, 12, 1, 1, 1, 1, 1, 2, 1, 1, 1, 1, 1, 1, 2, 1, 1, 1, 1, 1, 1, 1, 1, 2, 1, 1, 1, 1, 1, 1, 1, 2, 1, 1, 1, 1, 1, 1, 12, 1, 1, 1, 1, 1, 1, 12, 1, 1, 1, 1, 1, 1, 12, 1, 1, 1, 1, 1, 1, 12, 1, 1, 1, 9, 9, 9, 2],
         [2, 12, 12, 1, 1, 1, 12, 1, 1, 1, 1, 1, 2, 1, 1, 1, 1, 1, 1, 2, 1, 1, 1, 1, 1, 1, 1, 1, 2, 1, 1, 1, 1, 1, 1, 1, 2, 1, 1, 1, 1, 1, 1, 12, 1, 1, 1, 1, 1, 1, 12, 1, 1, 1, 1, 1, 1, 12, 1, 1, 1, 1, 1, 1, 12, 1, 1, 1, 1, 1, 1, 2],
@@ -530,12 +530,6 @@ var mapfour = {
         {id: 14,colour: 'lightblue',solid: 0,script: 'lock'}, //lock vent
         {id: 15,colour: '#E7F527',solid: 0,script: 'energybar'}, //popcake
         {id: 16,colour: '#E7F527',solid: 0,script: 'energybarthesecond'}, //popcake
-        {id: 17,colour: '#C0C0C0',solid: 0,script: 'goUp'}, //elevator
-        {id: 18,colour: '#C0C0C0',solid: 0,script: 'stopLifter'}, //elevator stop
-        {id: 19,colour: '#C0C0C0',solid: 0,script: 'moveblock'}, //movestop
-        {id: 20,colour: '#c0c0c0',solid: 0}, //1
-        {id: 21,colour: 'lightblue',solid: 0}, //2
-        {id: 22,colour: 'lightblue',solid: 0}, //3
     ],
     
     /*DATA*/
@@ -639,16 +633,12 @@ var mapfour = {
     /*SCRIPTS*/
 
     scripts: {
-        change_colour: 'game.player.colour = "#"+(Math.random()*0xFFFFFF<<0).toString(16);',
-        next_level: 'document.getElementById("victory_sound").play();mapselect.player.x = 12;mapselect.player.y = 11;game.load_map(mapselect);mapselect.keys[10].colour = "#ddd";mapselect.keys[10].script = " ";document.getElementById("listofgames4").style.display = "block";document.getElementById("displayLevel").innerHTML = "Level 1|5: T`Honzan Clouds"',
+        next_level: 'document.getElementById("victory_sound").play();mapselect.player.x = 12;mapselect.player.y = 11;game.load_map(mapselect);mapselect.keys[10].colour = "#ddd";mapselect.keys[10].script = " ";document.getElementById("listofgames5").style.display = "block";document.getElementById("displayLevel").innerHTML = "Level 1|5: T`Honzan Clouds"',
         death: 'document.getElementById("game_over_sound").play();game.load_map(map);game.current_map.keys[10].solid = 1;game.current_map.keys[10].colour = "#813319";document.getElementById("energy").value -= 1',
         unlock: 'game.current_map.keys[10].solid = 0;game.current_map.keys[10].colour = "#555";',
         lock: 'game.current_map.keys[10].solid = 1;game.current_map.keys[10].colour = "#813319";',
         energybar: 'map.player.x = 34;map.player.y = 14;document.getElementById("ding").play();document.getElementById("energy").value += 1;game.current_map.keys[15].script = " ";game.current_map.keys[15].colour = "#999"',
         energybarthesecond: 'map.player.x = 20;map.player.y = 50;document.getElementById("energy").value += 1;game.current_map.keys[16].script = " ";game.current_map.keys[16].colour = "#999";document.getElementById("ding").play()',
-        goUp: 'game.current_map.keys[4].gravity = {x:1,y:-0.005};game.current_map.keys[1].gravity = {x:1,y:-0.005}',
-        stopLifter: 'game.current_map.keys[4].gravity = {x:0,y:0.3};game.current_map.keys[1].gravity = {x:0,y:0.3}',
-        moveblock: ''
     }
     
 };
