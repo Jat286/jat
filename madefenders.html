@@ -15,7 +15,7 @@
                 font-family: 'Londrina Solid', cursive;
             }
             body {
-                background: #f2f2f2;
+                background: #fff;
                 cursor: url('tomobug_cursor.cur'), auto;
             }
             canvas {
@@ -27,6 +27,7 @@
                 background-image: url('assets/Images/ma.png');
                 background-size: cover;
                 z-index: 8;
+                border-radius: 0.75em 0 0 0.75em;
             }
             div.scores {
             	height: 400px;
@@ -35,7 +36,8 @@
                 width: 300px;
                 text-align: center;
                 border: none;
-                background-color: #ddd;
+                background-color: #e6e6e6;
+                border-radius: 0 0.75em 0.75em 0;
             }
             a {
             	text-decoration: none;
@@ -48,37 +50,40 @@
             	z-index: 99;
             	height:45px;
             	cursor:pointer;
-            	border-radius:5px;
             	font-size:25px;
             	width:175px;
                 position: absolute;
                 top: 55%;
                 margin-left:29%;
-                background-color:#34bdff;
+                background-color:#348aff;
+                border:none  !important;
+                border-radius: 5px;
             }
             #playb2 {
             	z-index: 99;
             	height:45px;
             	cursor:pointer;
-            	border-radius:5px;
             	font-size:25px;
             	width:175px;
                 position: absolute;
                 top: 70%;
                 margin-left:29%;
                 background-color:red;
+                border:none !important;
+                border-radius: 5px;
             }
             #playb3 {
             	z-index: 99;
             	height:45px;
             	cursor:pointer;
-            	border-radius:5px;
             	font-size:25px;
             	width:175px;
                 position: absolute;
                 top: 85%;
                 margin-left:29%;
                 background-color:#ffbf00;
+                border:none !important;
+                border-radius: 5px;
             }
             .container {
                 display:block;
@@ -112,11 +117,11 @@
 			<br><h1 style="font-size: 50px;"><span style="color:#34BDFF;">MA</span>DEFENDERS</h1>
 			<h1 id="displayLevel">Level 1|1: Ma HQ</h1>
 			<br/><h2>Levels Played:</h2>
-			<br><h3 id="listofgames1" style="font-size:20px;">Level 1</h3>
-			<h3 id="listofgames2" style="display: none;font-size:20px;">Level 2</h3>
-			<h3 id="listofgames3" style="display: none;font-size:20px;">Level 3</h3>
-			<h3 id="listofgames4" style="display: none;font-size:20px;">Level 4</h3>
-			<h3 id="listofgames5" style="display: none;font-size:20px;">Level 5</h3>
+			<br><h3 id="listofgames1" style="font-size:16.8px;">Level 1</h3>
+			<h3 id="listofgames2" style="display: none;font-size:16px;">Level 2</h3>
+			<h3 id="listofgames3" style="display: none;font-size:16px;">Level 3</h3>
+			<h3 id="listofgames4" style="display: none;font-size:16px;">Level 4</h3>
+			<h3 id="listofgames5" style="display: none;font-size:16px;">Level 5</h3>
 		</div>
 		<audio id="ding">
             <source src="assets/Sounds/ding.wav" type="audio/wav">
