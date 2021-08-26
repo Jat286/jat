@@ -7,7 +7,10 @@
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" />  
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
         <link rel="shortcut icon" href="assets/Images/ma.ico" type="image/x-icon" />
-        <base target="_blank" />
+		<script src="madefenders.js"></script>
+		<script src="maaccessible.js"></script>
+		<script src="mdlevels/mdone.lvl" type="text/javascript"></script>
+		<script src="mdlevels/mdtwo.lvl" type="text/javascript"></script>
 		<style>
 			* {
                 margin: 0;
@@ -112,8 +115,8 @@
 			<button id="playb3" onclick="info()">Info</button>
 		    <canvas id="canvas" autofocus>MADEFENDERS NOT WORKING =(</canvas>
 		</div>
-		<div style="display:block;" id="menu" class="scores">
-			<br>Energy:&nbsp;&nbsp;<meter max="10" min="0" value="6" low="4" style="width:150px;" id="energy" optimum="10">/10</meter><br>
+		<div style="display:block;" id="menu" class="scores">	
+		    <br>Energy:&nbsp;&nbsp;<meter max="10" min="0" value="6" low="4" style="width:150px;" id="energy" optimum="10">/10</meter><br>
 			<br><h1 style="font-size: 50px;"><span style="color:#34BDFF;">MA</span>DEFENDERS</h1>
 			<h1 id="displayLevel">Level 1|1: Ma HQ</h1>
 			<br/><h2>Levels Played:</h2>
@@ -121,7 +124,7 @@
 			<h3 id="listofgames2" style="display: none;font-size:16px;">Ma Pyramid</h3>
 			<h3 id="listofgames3" style="display: none;font-size:16px;">Hify`lm Maze</h3>
 			<h3 id="listofgames4" style="display: none;font-size:16px;">Dark forest</h3>
-			<h3 id="listofgames5" style="display: none;font-size:16px;">T`Honzan Clouds</h3>
+			<h3 id="listofgames5" style="display: none;font-size:16px;">T`Honzan Clouds</h3>	
 		</div>
 		<audio id="ding">
             <source src="assets/Sounds/ding.wav" type="audio/wav">
@@ -139,8 +142,6 @@
             <source src="assets/Sounds/victory.wav" type="audio/wav">
             Oh No!
         </audio>
-	    <p align="center">Game, logo and all names Copyright &copy; Jomuneziun A Technology 2015 - 2021 | <a href="index.html">Return to Jat</a></p>
-		<script src="madefenders.js"></script>
-		<script src="maaccessible.js"></script>
+	    <p align="center">Game, logo and all names Copyright &copy; Jomuneziun A Technology 2015 - 2021 | <a href="index.html" style="color: red;">Return to Jat</a> | <a href="madefenders.html" style="color: red;">Reload</a></p>
 	</body>
 </html>
