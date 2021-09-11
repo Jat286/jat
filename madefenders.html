@@ -42,6 +42,36 @@
 				  metaKey: false
 				}));
 			}
+		function a () {
+			window.addEventListener('keydown', (d) => {
+				  console.log(d)
+				})
+
+				window.dispatchEvent(new KeyboardEvent('keydown', {
+				  key: "a",
+				  keyCode: 65,
+				  code: "KeyA",
+				  which: 65,
+				  shiftKey: false,
+				  ctrlKey: false,
+				  metaKey: false
+				}));
+			}
+			function astop () {
+				window.addEventListener('keyup', (d) => {
+					  console.log(d)
+					})
+
+					window.dispatchEvent(new KeyboardEvent('keyup', {
+					  key: "a",
+					  keyCode: 65,
+					  code: "KeyA",
+					  which: 68,
+					  shiftKey: false,
+					  ctrlKey: false,
+					  metaKey: false
+					}));
+				}
 		</script>
 		<style>
 			* {
@@ -150,7 +180,7 @@
 		<div style="display:block;" id="menu" class="scores">	
 		    <br>Energy:&nbsp;&nbsp;<meter max="10" min="0" value="6" low="4" style="width:150px;" id="energy" optimum="10">/10</meter><br>
 			<br><h1 style="font-size: 50px;"><span style="color:#34BDFF;">MA</span>DEFENDERS</h1>
-			<button onmousedown="d()" onmouseup="dstop()">></button>
+			<button onmousedown="a()" onmouseup="astop()">a</button><button onmousedown="d()" onmouseup="dstop()">></button>
 			<h1 id="displayLevel">Level 1|1: Ma HQ</h1>
 			<br/><h2>Levels Played:</h2>
 			<h3 id="listofgames1" style="font-size:16.8px;">Ma HQ</h3>
