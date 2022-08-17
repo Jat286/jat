@@ -7,24 +7,36 @@
 @import url('https://fonts.googleapis.com/css2?family=Kalam&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Dr+Sugiyama&display=swap');
 /*Main Title*/
-body[data-starData='body-']{font-family:'Ubuntu', sans-serif;  justify-content:center;}
+body[data-starData='body-']{font-family:'Share', sans-serif;  justify-content:center; height:100%;}
 
 .overlay::-webkit-scrollbar {
   display: none;
 }
 html {
 	scroll-behavior: smooth;
+	height: 100%;
 }
+.hero-image {
+  background-image: url("assets/Images/jatlogobig.png");
+  height: 37%;
+  width: 50%;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  position: relative;
+  display: block;
+  margin-left: auto; 
+  margin-right: auto;
+}
+
 .overlay {
   -ms-overflow-style: none;  /* IE and Edge */
   scrollbar-width: none;  /* Firefox */
 }
-
 ::selection {
   color: #ffffff;
   background: #222;
 }
-
 .vl {
   border-left: 5px solid black;
   height: 500px;
