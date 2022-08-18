@@ -2,6 +2,8 @@
 <html>
 	<head>
 		<title>The Test Of Doom</title>
+        <link rel="shortcut icon" href="assets/Images/jatlogo.ico" type="image/x-icon" />
+
 		<style>
 		    html{font-family:sans-serif;text-align:center;-webkit-user-select:none;-moz-user-select:none;-ms-user-select:none;user-select:none;}
 		</style>
@@ -28,8 +30,8 @@
 		</script>
 	</head>
 	<body>
-		<h1>The Test Of Doom</h1>
-		<h3>{JR}-NC 2020 NO CHEATING ALLOWED</h3>
+		<h1>The Test Of Doom &copy; Jomunatech 2020 - 22</h1>
+		<h3>NO CHEATING ALLOWED</h3>
 		<h4>There are 5 questions in this test, to be completed in 1 minute maximum. Answer in CAPITALS.</h4>
 		<h4>Note: if you get it wrong you cannot progress. READ THE QUESTIONS!</h4>
 		<button onclick="setTimeout(timerFunction, 60000), start()">START TEST</button>
@@ -62,30 +64,19 @@
 		  function q4Function() {
 			var q4 = document.getElementById("q4txt").value;
 			if(q4 == "BLUE") {
-		      document.getElementById("q5").style.opacity = "100";				
-			}
-		  }
-		  function q5Function() {
-			var q5 = document.getElementById("q5txt").value;
-			if(q5 == "MA") {
+		      document.getElementById("q5").style.opacity = "100";	
 		      document.getElementById("final").style.opacity = "100";
 		      document.getElementById("final2").style.opacity = "100";				
 			}
 		  }
 		</script>
-		<br/><br/>
-		<hr/>
+		<br/>
 		<p id="q1" style="opacity:0;">Question 1: What is the creator bug? <input type="text" id="q1txt" placeholder="ANSWER" /><input type="submit" onclick="q1Function()" /></p>
 		<p id="q2" style="opacity:0;">Question 2: What is the missing letter: _èćó/_ǽˣêbug? <input type="text" id="q2txt" placeholder="ANSWER" /><input type="submit" onclick="q2Function()" /></p>
 		<p id="q3" style="opacity:0;">Question 3: Fill in the gaps (e.g. "A,B,C"): Jo_b_gs are green <input type="text" id="q3txt" placeholder="ANSWER" /><input type="submit" onclick="q3Function()" /></p>
 	    <p id="q4" style="opacity:0;">Question 4: Tomobugs are what colour? <input type="text" id="q4txt" placeholder="ANSWER" /><input type="submit" onclick="q4Function()" /></p>
-	    <p id="q5" style="opacity:0;">Question 5: What is the most commonly used Tomobug word? <select id="q5txt">
-	    	<option>MÍ</option>
-	    	<option>MA</option>
-	    	<option>MOO</option>
-	    	<option>MOP</option>
-	    </select><input type="submit" onclick="q5Function()" /></p>
-	    <p id="final" style="opacity:0;">Now email the last answer to me; if you are doing the test you should know my email address!</p>
-	    <a id="final2" style="opacity:0;cursor:default;" href="https://jomunatech.co.uk">Back to JatPassword</a>
+	    <p id="q5" style="opacity:0;">Question 5: What is the most commonly used Tomobug word?<input type="text" id="q5txt" placeholder="ANSWER" /></p>
+	    <p id="final" style="opacity:0;">Now email the last answer to <a href="mailto:contact.jomunatech@gmail.com">contact.jomunatech@gmail.com</a> along with your reason to get an account and name.</p>
+	    <a id="final2" style="opacity:0;cursor:default;" href="index.html">Back to JatPassword</a>
 	</body>
 </html>
