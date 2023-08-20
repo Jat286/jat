@@ -16,6 +16,10 @@ The pronounciation of 'Ma' is 'Mah' and 't'Honza' is 'Honza'
 
 THIS IS THE ORIGNIAL VERSION. FOR THE ACCESSIBLE, PLEASE SEE MAACCESSIBLE.JS
 
+Copyright of engine by dissimulate:
+
+Copyright (c) 2013 dissimulate at codepen
+
 Permission is hereby granted, free of charge, to any person obtaining a copy
 of this software and associated documentation files (the "Software"), to deal
 in the Software without restriction, including without limitation the rights
